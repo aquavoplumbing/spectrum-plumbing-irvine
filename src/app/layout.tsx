@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { DEFAULT_SEO } from "@/config/seo";
@@ -34,6 +35,10 @@ export default function RootLayout({
     >
       <head>
         <meta name="theme-color" content="#051324" />
+        <meta
+          name="google-site-verification"
+          content="-LsnZGc0g7U-jBK_75ePQTa3pRtGD93NLXbH3N9xBtY"
+        />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         {structuredData.map((schema, index) => (
           <script
@@ -44,6 +49,20 @@ export default function RootLayout({
         ))}
       </head>
       <body className="min-h-screen flex flex-col font-sans bg-[#F8FAFC] text-[#0F172A] selection:bg-[#168DFF] selection:text-white pb-16 md:pb-0">
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-PX5GSYGY99"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-PX5GSYGY99');
+          `}
+        </Script>
         {children}
       </body>
     </html>

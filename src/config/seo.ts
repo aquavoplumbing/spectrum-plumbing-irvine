@@ -66,4 +66,7 @@ export const DEFAULT_SEO: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "-LsnZGc0g7U-jBK_75ePQTa3pRtGD93NLXbH3N9xBtY",
+  },
 };
