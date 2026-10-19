@@ -131,7 +131,7 @@ export function BlogPostTemplate({ post }: BlogPostTemplateProps) {
                     <section
                       key={section.id}
                       id={section.id}
-                      className="scroll-mt-28"
+                      className="scroll-mt-36"
                     >
                       {/* Section Badge */}
                       {section.badge && (
@@ -167,7 +167,7 @@ export function BlogPostTemplate({ post }: BlogPostTemplateProps) {
                             <div
                               key={sub.id}
                               id={sub.id}
-                              className="scroll-mt-28"
+                              className="scroll-mt-36"
                             >
                               <h3 className="text-xl sm:text-2xl font-bold font-heading text-[#0F172A] mb-3 leading-snug">
                                 {sub.title}
@@ -237,7 +237,7 @@ export function BlogPostTemplate({ post }: BlogPostTemplateProps) {
                   {post.conclusion && (
                     <section
                       id="conclusion"
-                      className="scroll-mt-28 pt-8 border-t border-slate-200"
+                      className="scroll-mt-36 pt-8 border-t border-slate-200"
                     >
                       <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#0F172A] mb-4">
                         {post.conclusion.heading}

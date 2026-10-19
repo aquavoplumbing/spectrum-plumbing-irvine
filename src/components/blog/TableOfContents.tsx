@@ -30,43 +30,59 @@ export function TableOfContents({
     // Set first item active initially
     setActiveId(items[0].id);
 
-    const headingElements = items
-      .map((item) => document.getElementById(item.id))
-      .filter((el): el is HTMLElement => Boolean(el));
+    let ticking = false;
 
-    if (!headingElements.length) return;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const headerOffset = 145; // Offset below sticky header (header is ~113px)
+          const scrollPosition = window.scrollY + headerOffset;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // Find visible headings
-        const visibleEntries = entries.filter((e) => e.isIntersecting);
-        if (visibleEntries.length > 0) {
-          // Sort by top distance to viewport top
-          const topEntry = visibleEntries.sort(
-            (a, b) => a.boundingClientRect.top - b.boundingClientRect.top
-          )[0];
-          setActiveId(topEntry.target.id);
-        }
-      },
-      {
-        rootMargin: "-80px 0px -60% 0px",
-        threshold: [0, 0.5, 1],
+          // Find the last heading whose top position has crossed the header offset
+          let currentId = items[0].id;
+          for (const item of items) {
+            const el = document.getElementById(item.id);
+            if (el) {
+              const elTop = el.getBoundingClientRect().top + window.scrollY;
+              if (elTop <= scrollPosition) {
+                currentId = item.id;
+              }
+            }
+          }
+
+          setActiveId(currentId);
+          ticking = false;
+        });
+        ticking = true;
       }
-    );
+    };
 
-    headingElements.forEach((el) => observer.observe(el));
+    window.addEventListener("scroll", onScroll, { passive: true });
+    // Run once on mount
+    onScroll();
 
     return () => {
-      headingElements.forEach((el) => observer.unobserve(el));
-      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
     };
   }, [items]);
+
+  // Ensure active heading in the TOC container stays visible in view
+  useEffect(() => {
+    if (!activeId) return;
+    const aside = document.querySelector('aside[aria-label="Article Table of Contents"]');
+    if (!aside) return;
+
+    const activeLink = aside.querySelector(`a[href="#${activeId}"]`) as HTMLElement;
+    if (activeLink) {
+      activeLink.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    }
+  }, [activeId]);
 
   const handleLinkClick = (id: string, e: React.MouseEvent) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      const topOffset = 100; // Offset for sticky header
+      const topOffset = 135; // Generous offset below sticky header
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - topOffset;
 
@@ -140,7 +156,7 @@ export function TableOfContents({
     <aside
       aria-label="Article Table of Contents"
       className={cn(
-        "sticky top-24 z-20 max-h-[calc(100vh-7.5rem)] overflow-y-auto [scrollbar-width:thin] [scrollbar-color:#CBD5E1_transparent] hidden lg:block p-6 rounded-3xl bg-white border border-slate-200/90 shadow-[0_10px_30px_-10px_rgba(15,23,42,0.06)]",
+        "sticky top-32 z-20 max-h-[calc(100vh-9.5rem)] overflow-y-auto [scrollbar-width:thin] [scrollbar-color:#CBD5E1_transparent] hidden lg:block p-6 rounded-3xl bg-white border border-slate-200/90 shadow-[0_10px_30px_-10px_rgba(15,23,42,0.06)]",
         className
       )}
     >
