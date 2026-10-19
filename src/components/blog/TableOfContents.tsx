@@ -140,7 +140,7 @@ export function TableOfContents({
     <aside
       aria-label="Article Table of Contents"
       className={cn(
-        "sticky top-24 max-h-[calc(100vh-7.5rem)] overflow-y-auto [scrollbar-width:thin] [scrollbar-color:#CBD5E1_transparent] hidden lg:block p-6 rounded-3xl bg-white border border-slate-200/90 shadow-[0_10px_30px_-10px_rgba(15,23,42,0.06)] card-sheen",
+        "sticky top-24 z-20 max-h-[calc(100vh-7.5rem)] overflow-y-auto [scrollbar-width:thin] [scrollbar-color:#CBD5E1_transparent] hidden lg:block p-6 rounded-3xl bg-white border border-slate-200/90 shadow-[0_10px_30px_-10px_rgba(15,23,42,0.06)]",
         className
       )}
     >
