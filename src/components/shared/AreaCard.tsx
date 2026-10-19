@@ -29,17 +29,11 @@ export function AreaCard({ area, isFeatured = false }: AreaCardProps) {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#168DFF] to-[#38BDF8] text-white flex items-center justify-center shadow-md shadow-[#168DFF]/25 group-hover:scale-105 transition-transform">
               <MapPin className="w-4 h-4" aria-hidden="true" />
             </div>
-            {isWoodbridge ? (
-              <Link href={`/service-areas/${area.id}/`}>
-                <h3 className="text-lg font-bold font-heading text-[#0F172A] group-hover:text-[#087BDB] transition-colors leading-tight hover:underline">
-                  {area.name}
-                </h3>
-              </Link>
-            ) : (
-              <h3 className="text-lg font-bold font-heading text-[#0F172A] group-hover:text-[#087BDB] transition-colors leading-tight">
+            <Link href={`/service-areas/${area.id}/`}>
+              <h3 className="text-lg font-bold font-heading text-[#0F172A] group-hover:text-[#087BDB] transition-colors leading-tight hover:underline">
                 {area.name}
               </h3>
-            )}
+            </Link>
           </div>
           <span className="text-[10px] px-2.5 py-1 rounded-full bg-[#F0F7FF] border border-[#168DFF]/20 text-[#087BDB] font-extrabold font-mono">
             {area.zipCodes.split(",")[0]}
@@ -63,19 +57,13 @@ export function AreaCard({ area, isFeatured = false }: AreaCardProps) {
       </div>
 
       <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between gap-2">
-        {isWoodbridge ? (
-          <Link
-            href={`/service-areas/${area.id}/`}
-            className="text-xs font-bold text-[#087BDB] hover:text-[#168DFF] inline-flex items-center gap-1 group/link"
-          >
-            <span>Woodbridge Page</span>
-            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" />
-          </Link>
-        ) : (
-          <span className="text-[11px] font-medium text-slate-400">
-            Irvine Village
-          </span>
-        )}
+        <Link
+          href={`/service-areas/${area.id}/`}
+          className="text-xs font-bold text-[#087BDB] hover:text-[#168DFF] inline-flex items-center gap-1 group/link"
+        >
+          <span>{area.name} Page</span>
+          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" />
+        </Link>
 
         <PhoneCTA
           placement={`service_area_${area.id}`}

@@ -102,7 +102,7 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-xs">
               {SERVICE_AREAS_DATA.slice(0, 6).map((area) => {
-                const href = area.id === "woodbridge" ? "/service-areas/woodbridge/" : `/service-areas/${area.anchor}`;
+                const href = `/service-areas/${area.id}/`;
                 return (
                   <li key={area.id}>
                     <Link
