@@ -7,6 +7,8 @@ export function generateHomepageStructuredData() {
     "@id": `${BUSINESS_INFO.domain}/#organization`,
     name: BUSINESS_INFO.name,
     url: BUSINESS_INFO.domain,
+    logo: `${BUSINESS_INFO.domain}/logo.png`,
+    image: `${BUSINESS_INFO.domain}/logo.png`,
     description:
       "Local plumbing referral and information platform connecting Irvine homeowners with independent plumbing specialists.",
     telephone: BUSINESS_PHONE.raw,

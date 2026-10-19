@@ -1,5 +1,12 @@
 import { BlogPost, BlogPostMetadata } from "@/types/blog";
 import { signsOfASlabLeakPost } from "./signs-of-a-slab-leak";
+import { copperPinholeLeaksPost } from "./copper-pinhole-leaks-irvine-repipe";
+import { hydroJettingVsSnakingPost } from "./hydro-jetting-vs-snaking-sewer-cleaning";
+import { tanklessWaterHeaterDescalingPost } from "./tankless-water-heater-descaling-flush-guide";
+import { earthquakeGasShutOffValvesPost } from "./earthquake-gas-shut-off-valves-irvine";
+import { howToShutOffMainWaterValvePost } from "./how-to-shut-off-main-water-valve-irvine";
+import { garbageDisposalHummingPost } from "./garbage-disposal-humming-jammed-fix";
+import { commercialPlumbingBackflowPost } from "./commercial-plumbing-backflow-testing-irvine";
 import { BUSINESS_INFO } from "@/config/business";
 
 // Additional high-intent educational articles for the blog index and related cards
@@ -350,6 +357,13 @@ export const irvineHardWaterPost: BlogPost = {
 
 export const ALL_BLOG_POSTS: BlogPost[] = [
   signsOfASlabLeakPost,
+  copperPinholeLeaksPost,
+  hydroJettingVsSnakingPost,
+  tanklessWaterHeaterDescalingPost,
+  earthquakeGasShutOffValvesPost,
+  howToShutOffMainWaterValvePost,
+  garbageDisposalHummingPost,
+  commercialPlumbingBackflowPost,
   whyDrainsKeepCloggingPost,
   waterHeaterNotHeatingPost,
   irvineHardWaterPost,
@@ -385,3 +399,14 @@ export function getBlogCategories(): string[] {
   const categories = new Set(ALL_BLOG_POSTS.map((p) => p.category));
   return Array.from(categories);
 }
+
+export {
+  signsOfASlabLeakPost,
+  copperPinholeLeaksPost,
+  hydroJettingVsSnakingPost,
+  tanklessWaterHeaterDescalingPost,
+  earthquakeGasShutOffValvesPost,
+  howToShutOffMainWaterValvePost,
+  garbageDisposalHummingPost,
+  commercialPlumbingBackflowPost,
+};

@@ -2,10 +2,11 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Phone, ChevronDown, Menu, Droplets, Search } from "lucide-react";
+import { Phone, ChevronDown, Menu, Search } from "lucide-react";
 import { BUSINESS_PHONE } from "@/config/business";
 import { MAIN_NAVIGATION } from "@/config/navigation";
-import { PhoneCTA } from "@/components/shared/PhoneCTA";
+import { Logo } from "@/components/shared/Logo";
+import { trackPhoneClick } from "@/lib/analytics";
 import { MobileNavigation } from "./MobileNavigation";
 import { cn } from "@/lib/utils";
 
@@ -30,46 +31,25 @@ export function Header() {
     <>
       <header
         className={cn(
-          "sticky top-0 z-40 w-full transition-all duration-300",
+          "sticky top-0 z-40 w-full transition-all duration-300 relative",
           isScrolled
-            ? "bg-[#030C17]/90 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.4)] py-3 border-b border-cyan-500/20"
-            : "bg-[#030C17]/75 backdrop-blur-md py-4 md:py-5 border-b border-white/10"
+            ? "bg-[#041122]/95 backdrop-blur-xl shadow-[0_12px_36px_rgba(2,10,22,0.65)] py-2.5 md:py-3 border-b border-cyan-500/25"
+            : "bg-gradient-to-r from-[#041122] via-[#071F3D] to-[#041122] backdrop-blur-lg py-3.5 md:py-4 border-b border-cyan-500/15 shadow-[0_4px_24px_rgba(2,10,22,0.4)]"
         )}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Subtle luminous top highlight line */}
+        <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-[#38BDF8]/40 to-transparent pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center justify-between">
             {/* Logo & Brand Identity */}
-            <Link
-              href="/"
-              className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38BDF8] rounded-xl"
-              aria-label="Spectrum Plumbing Irvine Homepage"
-            >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#168DFF] to-[#38BDF8] flex items-center justify-center text-white shadow-lg shadow-[#168DFF]/35 group-hover:scale-105 transition-transform duration-200 border border-white/20">
-                <Droplets className="w-5 h-5 fill-current" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-heading font-extrabold text-lg md:text-xl tracking-tight text-white group-hover:text-[#38BDF8] transition-colors leading-tight">
-                  Spectrum Plumbing
-                </span>
-                <span className="text-[10px] font-extrabold text-[#38BDF8] tracking-widest uppercase flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  Irvine, CA
-                </span>
-              </div>
-            </Link>
+            <Logo priority size="md" />
 
             {/* Desktop Navigation Links */}
             <nav
-              className="hidden lg:flex items-center gap-1 xl:gap-2 bg-white/[0.04] p-1.5 rounded-2xl border border-white/10 backdrop-blur-md"
+              className="hidden lg:flex items-center gap-1 xl:gap-2 bg-[#092242]/70 p-1.5 rounded-2xl border border-cyan-400/20 shadow-inner backdrop-blur-md"
               aria-label="Main Navigation"
             >
-              <Link
-                href="/"
-                className="px-3.5 py-1.5 text-xs font-bold text-white/90 hover:text-[#38BDF8] transition-colors rounded-xl hover:bg-white/10"
-              >
-                Home
-              </Link>
-
               {/* Services Dropdown */}
               <div
                 className="relative"
@@ -93,7 +73,7 @@ export function Header() {
 
                 {servicesDropdownOpen && servicesNav?.children && (
                   <div className="absolute top-full left-0 w-80 pt-2 z-50">
-                    <div className="bg-[#051426]/95 border border-cyan-500/30 rounded-2xl shadow-2xl p-2.5 backdrop-blur-2xl">
+                    <div className="bg-[#061830]/98 border border-cyan-400/30 rounded-2xl shadow-[0_20px_50px_rgba(2,10,22,0.85)] p-2.5 backdrop-blur-2xl">
                       {servicesNav.children.map((child) => (
                         <Link
                           key={child.title}
@@ -149,7 +129,7 @@ export function Header() {
 
                 {areasDropdownOpen && areasNav?.children && (
                   <div className="absolute top-full left-0 w-76 pt-2 z-50">
-                    <div className="bg-[#051426]/95 border border-cyan-500/30 rounded-2xl shadow-2xl p-2.5 grid grid-cols-2 gap-1 backdrop-blur-2xl">
+                    <div className="bg-[#061830]/98 border border-cyan-400/30 rounded-2xl shadow-[0_20px_50px_rgba(2,10,22,0.85)] p-2.5 grid grid-cols-2 gap-1 backdrop-blur-2xl">
                       {areasNav.children.map((child) => (
                         <Link
                           key={child.title}
@@ -206,35 +186,34 @@ export function Header() {
               </Link>
             </nav>
 
-            {/* Right: Phone CTA & Mobile Toggle */}
-            <div className="flex items-center gap-3.5">
-              {/* Phone display for desktop */}
-              <div className="hidden sm:flex flex-col text-right">
-                <span className="text-[10px] text-[#38BDF8] uppercase font-bold tracking-wider flex items-center justify-end gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  Direct Irvine Line
-                </span>
-                <a
-                  href={BUSINESS_PHONE.href}
-                  className="text-base font-extrabold text-white hover:text-[#38BDF8] transition-colors"
-                >
-                  {BUSINESS_PHONE.display}
-                </a>
-              </div>
-
-              {/* Call Now Button */}
-              <PhoneCTA
-                placement="header"
-                label="Call Now"
-                variant="hero"
-                className="hidden md:inline-flex text-xs py-2.5 px-5 shadow-lg shadow-[#168DFF]/30 btn-3d"
-                showIcon={true}
-              />
-
-              {/* Compact Call Icon for Mobile */}
+            {/* Right: Merged Phone Call Button & Mobile Toggle */}
+            <div className="flex items-center gap-3">
+              {/* Unified Call Button (Merged Number + Call Button) */}
               <a
                 href={BUSINESS_PHONE.href}
-                className="md:hidden p-2 rounded-xl bg-gradient-to-tr from-[#168DFF] to-[#38BDF8] text-white shadow-md shadow-[#168DFF]/40"
+                onClick={() => trackPhoneClick("header", BUSINESS_PHONE.display)}
+                className="hidden sm:inline-flex items-center gap-2.5 bg-gradient-to-r from-[#168DFF] via-[#087BDB] to-[#0284C7] hover:from-[#2563EB] hover:to-[#0284C7] text-white py-2 px-3.5 md:py-2 md:px-4 rounded-xl shadow-lg shadow-[#168DFF]/30 hover:shadow-cyan-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 border border-cyan-400/30 group"
+                aria-label={`Call ${BUSINESS_PHONE.display}`}
+              >
+                <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-white/20 flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <Phone className="w-3.5 h-3.5 md:w-4 md:h-4 fill-current" />
+                </div>
+                <div className="flex flex-col text-left leading-tight">
+                  <span className="text-[9px] md:text-[10px] uppercase font-extrabold tracking-wider text-cyan-200 flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    Direct Irvine Line
+                  </span>
+                  <span className="text-xs md:text-sm font-extrabold tracking-tight text-white group-hover:text-cyan-100 transition-colors">
+                    {BUSINESS_PHONE.display}
+                  </span>
+                </div>
+              </a>
+
+              {/* Compact Call Icon for Mobile (< sm) */}
+              <a
+                href={BUSINESS_PHONE.href}
+                onClick={() => trackPhoneClick("header", BUSINESS_PHONE.display)}
+                className="sm:hidden p-2 rounded-xl bg-gradient-to-tr from-[#168DFF] to-[#38BDF8] text-white shadow-md shadow-[#168DFF]/40"
                 aria-label={`Call ${BUSINESS_PHONE.display}`}
               >
                 <Phone className="w-5 h-5 fill-current" />

@@ -5,6 +5,7 @@ import { BUSINESS_INFO, BUSINESS_PHONE } from "@/config/business";
 import { SERVICES_DATA } from "@/data/services";
 import { SERVICE_AREAS_DATA } from "@/data/serviceAreas";
 import { PhoneCTA } from "@/components/shared/PhoneCTA";
+import { Logo } from "@/components/shared/Logo";
 
 export function Footer() {
   const currentYear = 2026;
@@ -43,14 +44,7 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
           {/* Column 1: Brand & Model Disclosure */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#168DFF] to-[#38BDF8] flex items-center justify-center text-white shadow-lg shadow-[#168DFF]/30 border border-white/20">
-                <Droplets className="w-5 h-5 fill-current" />
-              </div>
-              <span className="font-heading font-extrabold text-lg text-white">
-                Spectrum Plumbing
-              </span>
-            </div>
+            <Logo size="md" subtext="Irvine & Orange County, CA" className="mb-4" />
             <p className="text-xs text-[#94A3B8] leading-relaxed mb-4">
               Spectrum Plumbing Irvine connects Irvine property owners with experienced, independent plumbing professionals. We help you find timely assistance for residential water leaks, drain blockages, and water heater repairs.
             </p>

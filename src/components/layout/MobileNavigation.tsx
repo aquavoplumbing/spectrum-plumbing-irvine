@@ -6,6 +6,7 @@ import { X, Phone, ChevronRight, Droplets, MapPin, Wrench, Search, HelpCircle, F
 import { BUSINESS_PHONE } from "@/config/business";
 import { MAIN_NAVIGATION } from "@/config/navigation";
 import { PhoneCTA } from "@/components/shared/PhoneCTA";
+import { Logo } from "@/components/shared/Logo";
 import { cn } from "@/lib/utils";
 
 interface MobileNavigationProps {
@@ -61,14 +62,9 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
         <div>
           {/* Header row */}
           <div className="flex items-center justify-between pb-6 border-b border-white/10">
-            <Link href="/" onClick={onClose} className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#087BDB] to-[#35C7F4] flex items-center justify-center text-white">
-                <Droplets className="w-4 h-4 fill-current" />
-              </div>
-              <span className="font-heading font-bold text-base text-white">
-                Spectrum Plumbing
-              </span>
-            </Link>
+            <div onClick={onClose}>
+              <Logo size="sm" />
+            </div>
             <button
               type="button"
               onClick={onClose}
