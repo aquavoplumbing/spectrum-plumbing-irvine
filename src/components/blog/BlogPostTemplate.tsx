@@ -104,8 +104,19 @@ export function BlogPostTemplate({ post }: BlogPostTemplateProps) {
               />
             </div>
 
+            {/* Immediate Search Intent Satisfaction: Quick Answer */}
+            {post.quickAnswer && (
+              <div className="max-w-4xl mx-auto lg:mx-0">
+                <QuickAnswer
+                  heading={post.quickAnswer.heading}
+                  text={post.quickAnswer.text}
+                  highlight={post.quickAnswer.highlight}
+                />
+              </div>
+            )}
+
             {/* Two-Column Editorial Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
               {/* Left / Main Reading Column (Target: 680-760px wide) */}
               <div
                 id="article-content"
@@ -113,15 +124,6 @@ export function BlogPostTemplate({ post }: BlogPostTemplateProps) {
               >
                 {/* Mobile Collapsible TOC */}
                 <TableOfContents items={tocItems} isMobileDrawer={true} />
-
-                {/* Immediate Search Intent Satisfaction: Quick Answer */}
-                {post.quickAnswer && (
-                  <QuickAnswer
-                    heading={post.quickAnswer.heading}
-                    text={post.quickAnswer.text}
-                    highlight={post.quickAnswer.highlight}
-                  />
-                )}
 
                 {/* Main Article Rich Content Sections */}
                 <div className="article-body space-y-12">
