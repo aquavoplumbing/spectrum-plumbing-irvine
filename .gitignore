@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# scratch & temporary previews
+scratch/
+public/*_preview.png
+public/*_desktop_*.png
+public/*_mobile_*.png
