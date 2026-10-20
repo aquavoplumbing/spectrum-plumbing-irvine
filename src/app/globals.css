@@ -259,16 +259,34 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* Fluid Hero and Section Titles */
+/* Fluid Hero and Section Titles with WCAG Mobile-Compliant Clamps */
 .hero-title {
-  font-size: clamp(2.5rem, 5.2vw + 0.5rem, 4.25rem);
-  line-height: 1.06;
-  letter-spacing: -0.04em;
+  font-size: clamp(1.875rem, 5vw + 0.25rem, 4.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .section-title,
 .section-headline {
-  font-size: clamp(2rem, 3.5vw + 0.5rem, 3.15rem);
-  line-height: 1.12;
-  letter-spacing: -0.035em;
+  font-size: clamp(1.5rem, 3.2vw + 0.25rem, 3.15rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
+
+/* Mobile Scroll & Touch Utilities */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.touch-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+

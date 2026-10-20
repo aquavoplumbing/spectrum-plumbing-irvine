@@ -59,7 +59,7 @@ export function LocationHero({ location }: LocationHeroProps) {
         {/* Breadcrumb Navigation */}
         <nav
           aria-label="Breadcrumb"
-          className="mb-6 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/[0.04] border border-white/10 text-xs text-[#94A3B8] backdrop-blur-md"
+          className="mb-6 inline-flex flex-wrap items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-xl bg-white/[0.04] border border-white/10 text-xs text-[#94A3B8] backdrop-blur-md max-w-full"
         >
           <Link
             href="/"
@@ -76,7 +76,7 @@ export function LocationHero({ location }: LocationHeroProps) {
             Service Areas
           </Link>
           <ChevronRight className="w-3 h-3 text-slate-500" />
-          <span className="text-white font-medium truncate max-w-[200px] sm:max-w-none">
+          <span className="text-white font-medium truncate max-w-[130px] xs:max-w-[180px] sm:max-w-none">
             {location.name}
           </span>
         </nav>
@@ -167,19 +167,19 @@ export function LocationHero({ location }: LocationHeroProps) {
                 </div>
 
                 {/* Floating Bottom Card */}
-                <div className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-[#051426]/90 border border-cyan-400/30 backdrop-blur-xl text-center shadow-xl">
-                  <div className="flex items-center justify-between">
-                    <div className="text-left">
-                      <p className="text-[10px] font-bold uppercase tracking-wider text-[#38BDF8]">
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-5 p-3 sm:p-4 rounded-2xl bg-[#051426]/90 border border-cyan-400/30 backdrop-blur-xl text-center shadow-xl">
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="text-left min-w-0">
+                      <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#38BDF8] truncate">
                         Need Local Assistance?
                       </p>
-                      <p className="text-base sm:text-lg font-extrabold text-white mt-0.5">
+                      <p className="text-sm sm:text-lg font-extrabold text-white mt-0.5 truncate">
                         {BUSINESS_PHONE.display}
                       </p>
                     </div>
                     <a
                       href={BUSINESS_PHONE.href}
-                      className="px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#168DFF] to-[#087BDB] text-white text-xs font-bold shadow-md hover:scale-105 active:scale-95 transition-all"
+                      className="px-3 sm:px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#168DFF] to-[#087BDB] text-white text-xs font-bold shadow-md hover:scale-105 active:scale-95 transition-all flex-shrink-0 whitespace-nowrap"
                     >
                       Call Now
                     </a>

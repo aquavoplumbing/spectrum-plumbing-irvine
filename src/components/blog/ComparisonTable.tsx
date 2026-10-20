@@ -1,6 +1,7 @@
 import React from "react";
 import { BlogTableData } from "@/types/blog";
 import { cn } from "@/lib/utils";
+import { ChevronsRight } from "lucide-react";
 
 interface ComparisonTableProps {
   table: BlogTableData;
@@ -11,9 +12,13 @@ export function ComparisonTable({ table, className }: ComparisonTableProps) {
   const { caption, headers, rows, footnote } = table;
 
   return (
-    <div className={cn("my-10 w-full", className)}>
-      <div className="overflow-x-auto rounded-2xl border border-slate-200/90 shadow-sm bg-white">
-        <table className="w-full text-left text-sm border-collapse min-w-[600px]">
+    <div className={cn("my-8 sm:my-10 w-full max-w-full", className)}>
+      <div className="flex sm:hidden items-center justify-end gap-1 mb-1 text-[11px] font-semibold text-slate-500">
+        <span>Swipe table sideways</span>
+        <ChevronsRight className="w-3.5 h-3.5 text-[#087BDB] animate-pulse" />
+      </div>
+      <div className="overflow-x-auto rounded-2xl border border-slate-200/90 shadow-sm bg-white touch-scroll">
+        <table className="w-full text-left text-sm border-collapse min-w-[540px]">
           {caption && (
             <caption className="p-4 text-left font-bold text-base text-[#0F172A] bg-[#F8FAFC] border-b border-slate-200/90">
               {caption}

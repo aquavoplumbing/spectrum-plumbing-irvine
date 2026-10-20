@@ -39,11 +39,11 @@ export function MidPageCTA({
       <div className="absolute top-0 right-10 w-[450px] h-[450px] bg-[#38BDF8]/20 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           
           {/* Left Text & Conversion */}
-          <div className="lg:col-span-7 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#168DFF]/15 border border-[#38BDF8]/40 text-[#38BDF8] text-xs font-bold uppercase tracking-wider mb-5 backdrop-blur-md shadow-md">
+          <div className="lg:col-span-7 flex flex-col justify-center text-center lg:text-left">
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#168DFF]/15 border border-[#38BDF8]/40 text-[#38BDF8] text-xs font-bold uppercase tracking-wider mb-5 backdrop-blur-md shadow-md w-fit mx-auto lg:mx-0">
               <Radio className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
               <span>{eyebrow}</span>
             </div>
@@ -86,29 +86,33 @@ export function MidPageCTA({
             </div>
           </div>
 
-          {/* Right Visual Pipe Graphic Element with Realistic Photo and 3D Holographic Badges */}
-          <div className="lg:col-span-5 hidden lg:flex justify-center">
-            <div className="relative w-88 h-88 rounded-3xl overflow-hidden glass-panel-dark border border-cyan-400/35 shadow-[0_25px_60px_-15px_rgba(3,12,23,0.8)] group card-sheen">
+          {/* Right Visual Pipe Graphic Element - Perfectly Sized to Match Content */}
+          <div className="lg:col-span-5 flex justify-center w-full mt-6 lg:mt-0">
+            <div className="relative w-full max-w-lg lg:max-w-none h-full min-h-[380px] sm:min-h-[440px] lg:min-h-[500px] rounded-3xl overflow-hidden glass-panel-dark border border-cyan-400/35 shadow-[0_25px_60px_-15px_rgba(3,12,23,0.8)] group card-sheen flex flex-col justify-between p-5 sm:p-6">
               <Image
                 src={image}
                 alt={imageAlt}
                 fill
-                sizes="350px"
+                sizes="(max-width: 1024px) 100vw, 550px"
                 className="object-cover transition-transform duration-700 group-hover:scale-106"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#030C17] via-[#030C17]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#030C17] via-[#030C17]/30 to-transparent pointer-events-none" />
 
-              <div className="absolute top-4 right-4 bg-[#030C17]/85 border border-cyan-400/30 backdrop-blur-md rounded-xl px-3 py-1.5 text-[11px] font-mono text-cyan-300">
+              <div className="relative z-10 self-end bg-[#030C17]/85 border border-cyan-400/30 backdrop-blur-md rounded-xl px-3.5 py-1.5 text-[11px] font-mono text-cyan-300 flex items-center gap-2 shadow-lg">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 <span>EST. DISPATCH: 15–45 MIN</span>
               </div>
 
-              <div className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-[#051426]/90 border border-cyan-400/30 backdrop-blur-xl text-center shadow-xl">
+              <div className="relative z-10 p-4 sm:p-5 rounded-2xl bg-[#051426]/90 border border-cyan-400/35 backdrop-blur-xl text-center shadow-2xl mt-auto">
                 <p className="text-[10px] font-bold uppercase tracking-wider text-[#38BDF8]">
                   Irvine Local Line
                 </p>
-                <p className="text-lg font-extrabold text-white mt-0.5">
+                <a
+                  href={BUSINESS_PHONE.href}
+                  className="text-xl sm:text-2xl font-extrabold text-white mt-0.5 hover:text-[#38BDF8] transition-colors block"
+                >
                   {BUSINESS_PHONE.display}
-                </p>
+                </a>
               </div>
             </div>
           </div>

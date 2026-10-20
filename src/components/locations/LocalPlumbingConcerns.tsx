@@ -43,19 +43,17 @@ export function LocalPlumbingConcerns({ location }: LocalPlumbingConcernsProps) 
             return (
               <div
                 key={idx}
-                className="p-7 sm:p-8 rounded-3xl bg-[#F8FAFC] border border-slate-200/90 hover:border-[#168DFF]/60 transition-all duration-300 bento-card-3d card-sheen flex flex-col justify-between"
+                className="p-5 sm:p-7 md:p-8 rounded-2xl sm:rounded-3xl bg-[#F8FAFC] border border-slate-200/90 hover:border-[#168DFF]/60 transition-all duration-300 bento-card-3d card-sheen flex flex-col justify-between"
               >
                 <div>
                   {/* Top Badge & Icon */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-[#168DFF] to-[#38BDF8] text-white flex items-center justify-center shadow-md shadow-[#168DFF]/25">
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#087BDB] bg-[#F0F7FF] px-3 py-1 rounded-full border border-[#168DFF]/20">
-                        {location.name} Property Risk 0{idx + 1}
-                      </span>
+                  <div className="flex flex-wrap items-center gap-2.5 mb-4">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-tr from-[#168DFF] to-[#38BDF8] text-white flex items-center justify-center shadow-md shadow-[#168DFF]/25 flex-shrink-0">
+                      <Icon className="w-5 h-5" />
                     </div>
+                    <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-[#087BDB] bg-[#F0F7FF] px-2.5 py-1 rounded-full border border-[#168DFF]/20">
+                      {location.name} Risk 0{idx + 1}
+                    </span>
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-bold font-heading text-[#0F172A] mb-3 leading-snug">
@@ -123,7 +121,7 @@ export function LocalPlumbingConcerns({ location }: LocalPlumbingConcernsProps) 
         </div>
 
         {/* Call Banner */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-[#030C17] via-[#051426] to-[#09223D] text-white border border-cyan-400/25 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-6 card-sheen">
+        <div className="p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-[#030C17] via-[#051426] to-[#09223D] text-white border border-cyan-400/25 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-6 card-sheen">
           <div>
             <h4 className="text-xl sm:text-2xl font-bold font-heading text-white">
               Noticing Any of These Signs in Your {location.name} Home?

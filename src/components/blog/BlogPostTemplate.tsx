@@ -24,6 +24,40 @@ import { generateBlogPostStructuredData } from "@/lib/structuredData";
 import { getRelatedBlogPosts } from "@/data/blog";
 import { Sparkles, CheckCircle2 } from "lucide-react";
 
+export function renderRichContent(text: string): React.ReactNode {
+  if (!text || !text.includes("[") || !text.includes("](") || !text.includes(")")) {
+    return text;
+  }
+  const parts: React.ReactNode[] = [];
+  const regex = /\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]*)\)/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index));
+    }
+    const [, linkText, url] = match;
+    const isExternal = url.startsWith("http") && !url.includes("spectrumplumbingirvine.com");
+    parts.push(
+      <a
+        key={`${match.index}-${url}`}
+        href={url}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
+        className="text-[#087BDB] hover:text-[#076EBE] font-semibold underline underline-offset-2 transition-colors"
+      >
+        {linkText}
+      </a>
+    );
+    lastIndex = regex.lastIndex;
+  }
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+  return parts.length > 0 ? parts : text;
+}
+
 interface BlogPostTemplateProps {
   post: BlogPost;
 }
@@ -150,7 +184,7 @@ export function BlogPostTemplate({ post }: BlogPostTemplateProps) {
                       <div className="space-y-5 text-base sm:text-lg leading-[1.8] text-[#334155] font-normal">
                         {section.paragraphs.map((p, pIdx) => (
                           <p key={pIdx} className="leading-relaxed">
-                            {p}
+                            {renderRichContent(p)}
                           </p>
                         ))}
                       </div>
@@ -175,7 +209,7 @@ export function BlogPostTemplate({ post }: BlogPostTemplateProps) {
 
                               <div className="space-y-4 text-base sm:text-lg leading-[1.8] text-[#334155]">
                                 {sub.paragraphs.map((p, idx) => (
-                                  <p key={idx}>{p}</p>
+                                  <p key={idx}>{renderRichContent(p)}</p>
                                 ))}
                               </div>
 
@@ -183,7 +217,7 @@ export function BlogPostTemplate({ post }: BlogPostTemplateProps) {
                                 <ul className="my-4 space-y-2 pl-5 list-disc text-base text-[#334155]">
                                   {sub.listItems.map((item, idx) => (
                                     <li key={idx} className="leading-relaxed">
-                                      {item}
+                                      {renderRichContent(item)}
                                     </li>
                                   ))}
                                 </ul>
@@ -245,7 +279,7 @@ export function BlogPostTemplate({ post }: BlogPostTemplateProps) {
 
                       <div className="space-y-4 text-base sm:text-lg leading-[1.8] text-[#334155] mb-6">
                         {post.conclusion.paragraphs.map((p, idx) => (
-                          <p key={idx}>{p}</p>
+                          <p key={idx}>{renderRichContent(p)}</p>
                         ))}
                       </div>
 

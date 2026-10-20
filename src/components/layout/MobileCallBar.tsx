@@ -42,8 +42,8 @@ export function MobileCallBar() {
             <span className="text-[11px] font-bold text-[#40D5FF] uppercase tracking-wider">
               Need Plumbing Help?
             </span>
-            <span className="text-xs text-white/90 font-medium">
-              (949) 539-8503
+            <span className="text-xs text-white/95 font-bold tracking-tight">
+              {BUSINESS_PHONE.display}
             </span>
           </div>
         </div>
@@ -52,7 +52,7 @@ export function MobileCallBar() {
           href={BUSINESS_PHONE.href}
           onClick={handleClick}
           aria-label={`Call now at ${BUSINESS_PHONE.display}`}
-          className="flex-1 max-w-[170px] inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#168DFF] to-[#087BDB] text-white font-bold text-sm shadow-lg shadow-[#168DFF]/40 active:scale-95 transition-all text-center"
+          className="flex-1 max-w-[170px] min-h-[44px] inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#168DFF] to-[#087BDB] hover:from-[#2563EB] hover:to-[#087BDB] text-white font-bold text-sm shadow-lg shadow-[#168DFF]/40 active:scale-95 transition-all text-center border border-cyan-400/30"
         >
           <Phone className="w-4 h-4 fill-current flex-shrink-0" />
           <span>Call Now</span>

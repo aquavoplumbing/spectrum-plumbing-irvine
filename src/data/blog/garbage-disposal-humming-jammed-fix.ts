@@ -191,6 +191,7 @@ export const garbageDisposalHummingPost: BlogPost = {
           title: "Completely Silent with Reset Button Pressed",
           paragraphs: [
             "If flipping the switch produces zero sound, the outlet has power, and the reset button does not click, the motor windings have burned out completely.",
+            "When internal motor windings short or bearings seize from sustained electrical load, kitchen appliance technicians like [Appliance Repair Orland Park](https://appliancerepairorlandpark.com/) recommend upgrading to a continuous-feed, high-torque disposal to protect connected dishwashers and prevent frequent kitchen breaker trips.",
           ],
         },
       ],

@@ -10,7 +10,7 @@ export function ServiceAreasSection() {
   return (
     <section
       id="service-areas"
-      className="py-20 md:py-28 bg-[#F8FAFC] relative overflow-hidden"
+      className="py-20 md:py-28 bg-[#F8FAFC] relative overflow-hidden scroll-mt-24 md:scroll-mt-28"
     >
       {/* Dynamic 3D ambient orbs */}
       <div className="absolute top-1/3 -left-32 w-80 h-80 bg-[#168DFF]/5 rounded-full blur-[90px] pointer-events-none" />

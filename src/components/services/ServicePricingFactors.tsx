@@ -57,10 +57,10 @@ export function ServicePricingFactors({ service }: ServicePricingFactorsProps) {
         </div>
 
         {/* Pricing Transparency Banner with Direct Call Action */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-[#030C17] via-[#051426] to-[#09223D] text-white border border-cyan-400/25 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 card-sheen">
-          <div className="flex items-start gap-5">
-            <div className="w-13 h-13 rounded-2xl bg-gradient-to-tr from-[#168DFF] to-[#38BDF8] border border-white/20 flex items-center justify-center text-white flex-shrink-0 shadow-lg shadow-[#168DFF]/30 mt-0.5">
-              <PhoneCall className="w-6 h-6" />
+        <div className="p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-[#030C17] via-[#051426] to-[#09223D] text-white border border-cyan-400/25 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 card-sheen">
+          <div className="flex items-start gap-4 sm:gap-5 w-full md:w-auto">
+            <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-2xl bg-gradient-to-tr from-[#168DFF] to-[#38BDF8] border border-white/20 flex items-center justify-center text-white flex-shrink-0 shadow-lg shadow-[#168DFF]/30 mt-0.5">
+              <PhoneCall className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
               <h4 className="text-xl sm:text-2xl font-bold font-heading text-white">

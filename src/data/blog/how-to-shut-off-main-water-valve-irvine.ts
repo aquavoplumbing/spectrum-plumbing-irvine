@@ -174,7 +174,8 @@ export const howToShutOffMainWaterValvePost: BlogPost = {
       title: "What to Do Immediately After Shutting Off the Main Valve",
       badge: "Action Protocol",
       paragraphs: [
-        "Once the main water valve is secured, follow these crucial post-shutoff steps to depressurize your home safely.",
+        "Once the main water valve is secured, follow these crucial post-shutoff steps to depressurize your home safely and minimize structural water damage.",
+        "Halting the flow is only step one; extracting standing water and setting up high-velocity air movers within 24 to 48 hours is essential to stop mold growth. Industry resources like [Boise Water Damage Restoration Services](https://boisewaterdamagerestorationservices.com/) emphasize that prompt moisture mapping and industrial drying can save drywall, subfloors, and structural framing after catastrophic pipe bursts.",
       ],
       subsections: [
         {

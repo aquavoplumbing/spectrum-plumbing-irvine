@@ -113,6 +113,7 @@ export const hydroJettingVsSnakingPost: BlogPost = {
           paragraphs: [
             "Hydro jetting is a heavy-duty hydraulic restoration technology. A commercial jetter pumps municipal water through a reinforced high-pressure thermoplastic hose at 3,500 to 4,000 PSI with a delivery volume of 8 to 18 gallons per minute.",
             "At the tip of the hose sits a precision-engineered stainless steel nozzle. The nozzle features one or more forward-firing piercing jets that slice through obstructions, while several reverse-firing jets at 15- to 45-degree angles propel the hose forward through the pipe while scouring the entire 360-degree circumference. This high-velocity spray strips away decades of accumulated fats, oils, grease (FOG), bio-sludge, and shaved root hairs, flushing the pulverized debris downstream to the city main.",
+            "When responding to severe main line backups, emergency drainage specialists like [Lancaster Rapid Plumbing](https://lancasterrapidplumbing.com/) note that pairing commercial hydro jetting with real-time video camera inspection provides complete pipe wall restoration, verifying that root masses are totally eliminated rather than just poked through.",
           ],
         },
       ],

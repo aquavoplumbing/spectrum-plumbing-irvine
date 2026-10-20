@@ -196,6 +196,7 @@ export const copperPinholeLeaksPost: BlogPost = {
           paragraphs: [
             "Modern whole-home repiping replaces aged copper with flexible PEX-A (cross-linked polyethylene, such as Uponor ProPEX). PEX is non-metallic, completely impervious to chloramines and acidic water, and will never pit, corrode, or develop scale buildup.",
             "Because PEX is flexible, experienced repipe crews can snake lines through wall cavities with small, surgical drywall incisions, completing a multi-bath Irvine home in 2 to 4 days with minimal structural disruption.",
+            "Comprehensive repiping should always adhere to strict master plumbing installation standards, such as those demonstrated across the [Aquavo Plumbing](https://aquavoplumbing.com/) network, ensuring that home distribution manifolds receive dedicated shutoff isolation and undergo rigorous high-pressure hydraulic testing prior to drywall reconstruction.",
           ],
           callout: {
             type: "insight",

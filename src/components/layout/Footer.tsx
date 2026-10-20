@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Droplets, MapPin, ChevronRight, Radio, PhoneCall } from "lucide-react";
-import { BUSINESS_INFO, BUSINESS_PHONE } from "@/config/business";
+import { BUSINESS_INFO, BUSINESS_PHONE, BUSINESS_ADDRESS } from "@/config/business";
 import { SERVICES_DATA } from "@/data/services";
 import { SERVICE_AREAS_DATA } from "@/data/serviceAreas";
 import { PhoneCTA } from "@/components/shared/PhoneCTA";
@@ -48,9 +48,17 @@ export function Footer() {
             <p className="text-xs text-[#94A3B8] leading-relaxed mb-4">
               Spectrum Plumbing Irvine connects Irvine property owners with experienced, independent plumbing professionals. We help you find timely assistance for residential water leaks, drain blockages, and water heater repairs.
             </p>
-            <div className="flex items-center gap-2 text-xs text-[#38BDF8] font-bold mb-4">
-              <MapPin className="w-4 h-4 flex-shrink-0" />
-              <span>Serving All Irvine Villages, CA</span>
+            <div className="space-y-2 mb-4 text-xs">
+              <div className="flex items-start gap-2 text-[#CBD5E1]">
+                <MapPin className="w-4 h-4 text-[#38BDF8] flex-shrink-0 mt-0.5" />
+                <address className="not-italic leading-relaxed">
+                  <span className="block font-medium text-white">{BUSINESS_ADDRESS.street}</span>
+                  <span className="text-[#94A3B8]">{BUSINESS_ADDRESS.city}, {BUSINESS_ADDRESS.state} {BUSINESS_ADDRESS.zip}</span>
+                </address>
+              </div>
+              <p className="text-[11px] text-[#38BDF8] font-semibold pl-6">
+                Serving All Irvine Villages, CA
+              </p>
             </div>
             <a
               href={BUSINESS_PHONE.href}
@@ -205,6 +213,39 @@ export function Footer() {
                 </a>
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* Embedded Map Section */}
+        <div className="py-10 border-b border-white/10">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
+            <div>
+              <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#38BDF8] mb-1">
+                <MapPin className="w-3.5 h-3.5" />
+                <span>Service Area &amp; Office Location</span>
+              </div>
+              <h4 className="text-base sm:text-lg font-bold text-white">
+                Serving All Irvine Villages &amp; Orange County
+              </h4>
+            </div>
+            <div className="text-xs text-[#94A3B8] sm:text-right">
+              <span className="block text-white font-medium">{BUSINESS_ADDRESS.full}</span>
+              <span className="text-[#38BDF8]">Dispatching across 92602, 92603, 92604, 92606, 92612, 92614, 92618, 92620</span>
+            </div>
+          </div>
+
+          <div className="relative w-full h-72 sm:h-80 md:h-96 rounded-2xl overflow-hidden border border-cyan-500/30 shadow-2xl bg-[#051426]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106235.60051661455!2d-117.77338655!3d33.686623950000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcdd0e689140e3%3A0xa77ab575604a9a39!2sIrvine%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1792485102459!5m2!1sen!2s"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              title="Spectrum Plumbing Irvine Service Area Map"
+              className="w-full h-full"
+            />
           </div>
         </div>
 

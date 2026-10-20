@@ -108,6 +108,7 @@ export const whyDrainsKeepCloggingPost: BlogPost = {
       paragraphs: [
         "In master-planned communities like Irvine, mature street trees (including ficus, eucalyptus, and sycamores) planted during the 1970s and 1980s have roots that vigorously seek moisture through vitrified clay or cast iron sewer joints.",
         "Additionally, cooking grease poured down kitchen disposals adheres to the cooler underground pipe walls, forming a waxy, sticky mass that catches food particles and paper until water flow is completely halted.",
+        "Beyond subterranean sewer lines, chronic slow drainage and gurgling toilets frequently stem from blocked roof plumbing vent stacks that equalize system air pressure. Roofing trade professionals like [Bridgewater Roofer](https://bridgewaterroofer.com/) highlight that inspecting plumbing vent flashing collars and clearing roofline vent stacks prevents vacuum locks from stalling interior wastewater flow while keeping roof leaks at bay.",
       ],
     },
   ],
@@ -349,6 +350,7 @@ export const irvineHardWaterPost: BlogPost = {
     heading: "Proactive Protection for Your Plumbing System",
     paragraphs: [
       "Balancing household water pressure and addressing mineral hardness will extend the working lifespan of appliances and copper piping by decades.",
+      "To schedule a comprehensive home water pressure evaluation or calibrate a failing pressure-reducing valve, homeowners can connect directly with the licensed specialists at [Spectrum Plumbing Irvine](https://spectrumplumbingirvine.com/) for precision calibration and long-term plumbing infrastructure protection.",
     ],
     keyTakeaway:
       "Call (949) 539-8503 to discuss whole-home water pressure testing, PRV replacements, and water conditioning options for your Irvine property.",

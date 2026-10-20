@@ -31,7 +31,7 @@ export function Header() {
     <>
       <header
         className={cn(
-          "sticky top-0 z-40 w-full transition-all duration-300 relative",
+          "sticky top-0 z-50 w-full transition-all duration-300",
           isScrolled
             ? "bg-[#041122]/95 backdrop-blur-xl shadow-[0_12px_36px_rgba(2,10,22,0.65)] py-2.5 md:py-3 border-b border-cyan-500/25"
             : "bg-gradient-to-r from-[#041122] via-[#071F3D] to-[#041122] backdrop-blur-lg py-3.5 md:py-4 border-b border-cyan-500/15 shadow-[0_4px_24px_rgba(2,10,22,0.4)]"
@@ -187,7 +187,7 @@ export function Header() {
             </nav>
 
             {/* Right: Merged Phone Call Button & Mobile Toggle */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1.5 xs:gap-2 sm:gap-3 flex-shrink-0">
               {/* Unified Call Button (Merged Number + Call Button) */}
               <a
                 href={BUSINESS_PHONE.href}
@@ -209,21 +209,21 @@ export function Header() {
                 </div>
               </a>
 
-              {/* Compact Call Icon for Mobile (< sm) */}
+              {/* Compact Call Icon for Mobile (< sm) - 44x44px accessible touch target */}
               <a
                 href={BUSINESS_PHONE.href}
                 onClick={() => trackPhoneClick("header", BUSINESS_PHONE.display)}
-                className="sm:hidden p-2 rounded-xl bg-gradient-to-tr from-[#168DFF] to-[#38BDF8] text-white shadow-md shadow-[#168DFF]/40"
+                className="sm:hidden w-11 h-11 rounded-xl bg-gradient-to-tr from-[#168DFF] to-[#38BDF8] text-white shadow-md shadow-[#168DFF]/40 flex items-center justify-center active:scale-95 transition-transform"
                 aria-label={`Call ${BUSINESS_PHONE.display}`}
               >
                 <Phone className="w-5 h-5 fill-current" />
               </a>
 
-              {/* Mobile Drawer Toggle */}
+              {/* Mobile Drawer Toggle - 44x44px accessible touch target */}
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(true)}
-                className="lg:hidden p-2 rounded-xl text-white/90 hover:text-white hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38BDF8]"
+                className="lg:hidden w-11 h-11 rounded-xl text-white/90 hover:text-white hover:bg-white/10 flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38BDF8]"
                 aria-label="Open mobile navigation"
               >
                 <Menu className="w-6 h-6" />

@@ -279,14 +279,14 @@ export function FAQHubClient() {
         </div>
       </div>
 
-      {/* Category Pills Navigation */}
-      <div className="flex items-center justify-start lg:justify-center gap-2 overflow-x-auto no-scrollbar pb-2">
+      {/* Category Pills Navigation with Smooth Touch Horizontal Scrolling */}
+      <div className="w-full max-w-full min-w-0 overflow-x-auto no-scrollbar pb-3 pt-1 -mx-4 px-4 sm:mx-0 sm:px-0 flex items-center justify-start lg:justify-center gap-2 touch-scroll">
         <button
           type="button"
           onClick={() => setActiveCategory("all")}
-          className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
+          className={`flex-shrink-0 px-4 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer select-none min-h-[40px] ${
             activeCategory === "all"
-              ? "bg-[#09223D] text-white shadow-md"
+              ? "bg-[#09223D] text-white shadow-md border border-cyan-500/40"
               : "bg-white text-[#475569] hover:bg-slate-100 border border-slate-200"
           }`}
         >
@@ -298,9 +298,9 @@ export function FAQHubClient() {
             key={cat.categorySlug}
             type="button"
             onClick={() => setActiveCategory(cat.categorySlug)}
-            className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
+            className={`flex-shrink-0 px-4 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer select-none min-h-[40px] ${
               activeCategory === cat.categorySlug
-                ? "bg-[#09223D] text-white shadow-md"
+                ? "bg-[#09223D] text-white shadow-md border border-cyan-500/40"
                 : "bg-white text-[#475569] hover:bg-slate-100 border border-slate-200"
             }`}
           >

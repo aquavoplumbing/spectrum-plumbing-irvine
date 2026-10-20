@@ -171,8 +171,8 @@ export default function AboutPage() {
               />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-8 rounded-3xl bg-[#F8FAFC] border border-slate-200/90 bento-card-3d">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+              <div className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-[#F8FAFC] border border-slate-200/90 bento-card-3d">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#168DFF] to-[#38BDF8] text-white flex items-center justify-center shadow-md shadow-[#168DFF]/25 mb-6">
                   <PhoneCall className="w-6 h-6" />
                 </div>
@@ -184,7 +184,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-8 rounded-3xl bg-[#F8FAFC] border border-slate-200/90 bento-card-3d">
+              <div className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-[#F8FAFC] border border-slate-200/90 bento-card-3d">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#087BDB] to-[#168DFF] text-white flex items-center justify-center shadow-md shadow-[#087BDB]/25 mb-6">
                   <HeartHandshake className="w-6 h-6" />
                 </div>
@@ -196,7 +196,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-8 rounded-3xl bg-[#F8FAFC] border border-slate-200/90 bento-card-3d">
+              <div className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-[#F8FAFC] border border-slate-200/90 bento-card-3d">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#0284C7] to-[#38BDF8] text-white flex items-center justify-center shadow-md shadow-[#0284C7]/25 mb-6">
                   <Compass className="w-6 h-6" />
                 </div>

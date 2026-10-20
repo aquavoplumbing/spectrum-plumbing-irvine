@@ -183,6 +183,7 @@ export const signsOfASlabLeakPost: BlogPost = {
           paragraphs: [
             "As escaping water saturates the soil and crushed rock base under the slab, capillary action draws moisture upward through micro-cracks in the concrete. Once moisture reaches the finished floor surface, it attacks building materials.",
             "Signs of upward moisture migration include: dark or swollen MDF baseboards, paint peeling along the bottom two inches of drywall, warping or cupping engineered hardwood and laminate planks, damp carpet padding with a musty or sour mildew odor, and loosened floor tiles where the thinset mortar has emulsified.",
+            "When sub-slab moisture compromises living areas, comprehensive structural drying and thermal moisture mapping—such as services performed by [AZ Water Damage Restoration](https://azwaterdamagerestoration.com/)—are crucial to extract deep-seated moisture from framing and prevent secondary black mold colonization before permanent floor repairs begin.",
           ],
           callout: {
             type: "safety",

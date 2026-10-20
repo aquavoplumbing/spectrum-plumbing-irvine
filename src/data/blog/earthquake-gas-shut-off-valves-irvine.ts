@@ -171,6 +171,7 @@ export const earthquakeGasShutOffValvesPost: BlogPost = {
       badge: "Post-Quake Protocol",
       paragraphs: [
         "If a significant tremor occurs and your gas appliances stop working, your seismic valve successfully performed its duty.",
+        "Severe tremors can also jar electrical panels, loosen service conduit, and spark internal arcing in high-amperage appliances. Certified trade partners like [Winter Haven Electrician](https://winterhavenelectrician.com/) advise inspecting main service grounding electrodes and testing dedicated 240V circuits for shorts before re-energizing gas heating controls or turning pilot lights back on.",
       ],
       subsections: [
         {

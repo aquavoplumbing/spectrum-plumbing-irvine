@@ -197,6 +197,7 @@ export const tanklessWaterHeaterDescalingPost: BlogPost = {
     paragraphs: [
       "Operating a tankless water heater in Irvine without an annual descaling flush is like driving a high-performance car without ever changing the oil.",
       "A quick 60-minute service restores thermal efficiency, eliminates unpredictable temperature drops, and extends the operational life of your system to 20 years or more.",
+      "Across coastal Southern California, where aggressive mineral levels frequently trigger flow sensor and ignition errors, regional technical specialists like [Long Beach Water Heater Services](https://longbeachwaterheaterservices.com/) confirm that routine annual descaling flushes and sensor cleanings prevent premature heat exchanger burnout and maintain peak gas burner efficiency.",
     ],
     keyTakeaway:
       "Call (949) 539-8503 to book your annual tankless water heater flush or consult with a local water heating specialist.",

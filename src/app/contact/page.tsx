@@ -105,12 +105,12 @@ export default function ContactPage() {
         <TrustStrip />
 
         {/* Section 2 & 3: Primary Phone Card + Optional Form */}
-        <section className="py-20 md:py-28 bg-[#F8FAFC] border-b border-slate-200/80">
+        <section className="py-20 md:py-28 bg-[#F8FAFC] border-b border-slate-200/80 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
               {/* Primary Phone Contact Column (Dominant Action) */}
               <div className="lg:col-span-5 space-y-6">
-                <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-[#051426] via-[#09223D] to-[#0D2B4D] text-white border border-cyan-400/30 shadow-2xl card-sheen relative overflow-hidden">
+                <div className="p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#051426] via-[#09223D] to-[#0D2B4D] text-white border border-cyan-400/30 shadow-2xl card-sheen relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-48 h-48 bg-[#168DFF]/20 rounded-full blur-[80px] pointer-events-none" />
 
                   <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#168DFF]/20 border border-cyan-400/30 text-[#38BDF8] text-xs font-bold uppercase tracking-wider mb-6">

@@ -54,7 +54,7 @@ export default function RootLayout({
           />
         ))}
       </head>
-      <body className="min-h-screen flex flex-col font-sans bg-[#F8FAFC] text-[#0F172A] selection:bg-[#168DFF] selection:text-white pb-16 md:pb-0">
+      <body className="min-h-screen flex flex-col font-sans bg-[#F8FAFC] text-[#0F172A] selection:bg-[#168DFF] selection:text-white pb-28 sm:pb-32 md:pb-0">
         {/* Google tag (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-PX5GSYGY99"

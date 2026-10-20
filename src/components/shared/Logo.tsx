@@ -14,25 +14,25 @@ interface LogoProps {
 
 const sizeConfig = {
   sm: {
-    iconSize: "w-8 h-8 sm:w-9 sm:h-9",
+    iconSize: "w-7 h-7 xs:w-8 xs:h-8 sm:w-9 sm:h-9",
     pixels: 36,
-    titleSize: "text-base sm:text-lg",
+    titleSize: "text-sm xs:text-base sm:text-lg",
     subtextSize: "text-[9px] sm:text-[10px]",
-    gap: "gap-2 sm:gap-2.5",
+    gap: "gap-1.5 xs:gap-2 sm:gap-2.5",
   },
   md: {
-    iconSize: "w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11",
+    iconSize: "w-8 h-8 xs:w-9 xs:h-9 sm:w-10 sm:h-10 md:w-11 md:h-11",
     pixels: 44,
-    titleSize: "text-lg sm:text-xl",
-    subtextSize: "text-[10px] sm:text-xs",
-    gap: "gap-2.5 sm:gap-3",
+    titleSize: "text-[14px] xs:text-base sm:text-xl",
+    subtextSize: "text-[9px] xs:text-[10px] sm:text-xs",
+    gap: "gap-2 xs:gap-2.5 sm:gap-3",
   },
   lg: {
-    iconSize: "w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14",
+    iconSize: "w-10 h-10 xs:w-11 xs:h-11 sm:w-12 sm:h-12 md:w-14 md:h-14",
     pixels: 56,
-    titleSize: "text-xl sm:text-2xl",
-    subtextSize: "text-xs sm:text-sm",
-    gap: "gap-3 sm:gap-3.5",
+    titleSize: "text-lg xs:text-xl sm:text-2xl",
+    subtextSize: "text-[11px] xs:text-xs sm:text-sm",
+    gap: "gap-2.5 sm:gap-3 sm:gap-3.5",
   },
 };
 
@@ -47,7 +47,7 @@ export function Logo({
   const currentSize = sizeConfig[size];
 
   const content = (
-    <div className={cn("flex items-center group", currentSize.gap, className)}>
+    <div className={cn("flex items-center group min-w-0", currentSize.gap, className)}>
       <div className="relative flex-shrink-0 transition-transform duration-200 group-hover:scale-105">
         <Image
           src="/logo.png"
@@ -63,10 +63,10 @@ export function Logo({
       </div>
 
       {showText && (
-        <div className="flex flex-col">
+        <div className="flex flex-col min-w-0">
           <span
             className={cn(
-              "font-heading font-extrabold tracking-tight text-white group-hover:text-[#38BDF8] transition-colors leading-tight",
+              "font-heading font-extrabold tracking-tight text-white group-hover:text-[#38BDF8] transition-colors leading-tight whitespace-nowrap",
               currentSize.titleSize
             )}
           >

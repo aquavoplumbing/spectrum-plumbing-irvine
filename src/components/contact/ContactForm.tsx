@@ -147,7 +147,7 @@ export function ContactForm() {
             value={formData.fullName}
             onChange={handleChange}
             placeholder="e.g. Sarah Mitchell"
-            className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-[#0F172A] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#168DFF]/40 focus:border-[#168DFF] transition-all bg-slate-50/50"
+            className="w-full px-4 py-3 min-h-[48px] rounded-xl border border-slate-200 text-base sm:text-sm text-[#0F172A] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#168DFF]/40 focus:border-[#168DFF] transition-all bg-slate-50/50"
           />
         </div>
 
@@ -164,7 +164,7 @@ export function ContactForm() {
               value={formData.phone}
               onChange={handleChange}
               placeholder="(949) 000-0000"
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-[#0F172A] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#168DFF]/40 focus:border-[#168DFF] transition-all bg-slate-50/50"
+              className="w-full px-4 py-3 min-h-[48px] rounded-xl border border-slate-200 text-base sm:text-sm text-[#0F172A] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#168DFF]/40 focus:border-[#168DFF] transition-all bg-slate-50/50"
             />
           </div>
 
@@ -179,7 +179,7 @@ export function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               placeholder="sarah@example.com"
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-[#0F172A] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#168DFF]/40 focus:border-[#168DFF] transition-all bg-slate-50/50"
+              className="w-full px-4 py-3 min-h-[48px] rounded-xl border border-slate-200 text-base sm:text-sm text-[#0F172A] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#168DFF]/40 focus:border-[#168DFF] transition-all bg-slate-50/50"
             />
           </div>
         </div>
@@ -193,7 +193,7 @@ export function ContactForm() {
             name="serviceCategory"
             value={formData.serviceCategory}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#168DFF]/40 focus:border-[#168DFF] transition-all bg-slate-50/50"
+            className="w-full px-4 py-3 min-h-[48px] rounded-xl border border-slate-200 text-base sm:text-sm text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#168DFF]/40 focus:border-[#168DFF] transition-all bg-slate-50/50"
           >
             <option value="Emergency or Diagnostic Inquiry">Emergency / Immediate Diagnostic Inquiry</option>
             <option value="Drain Cleaning">Drain Cleaning &amp; Clog Removal</option>
@@ -218,20 +218,20 @@ export function ContactForm() {
             value={formData.message}
             onChange={handleChange}
             placeholder="Please share any visible symptoms, location in your home, or neighborhood in Irvine..."
-            className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-[#0F172A] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#168DFF]/40 focus:border-[#168DFF] transition-all bg-slate-50/50 resize-y"
+            className="w-full px-4 py-3 rounded-xl border border-slate-200 text-base sm:text-sm text-[#0F172A] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#168DFF]/40 focus:border-[#168DFF] transition-all bg-slate-50/50 resize-y"
           />
         </div>
 
         <div className="pt-2">
-          <label className="flex items-start gap-3 cursor-pointer text-xs text-[#475569]">
+          <label className="flex items-start gap-3 cursor-pointer text-xs text-[#475569] min-h-[44px] py-1">
             <input
               type="checkbox"
               name="privacyConsent"
               checked={formData.privacyConsent}
               onChange={handleChange}
-              className="mt-0.5 rounded border-slate-300 text-[#087BDB] focus:ring-[#087BDB]"
+              className="mt-0.5 w-4 h-4 rounded border-slate-300 text-[#087BDB] focus:ring-[#087BDB]"
             />
-            <span>
+            <span className="leading-snug">
               I agree to the{" "}
               <a href="/privacy-policy/" className="text-[#087BDB] underline hover:text-[#168DFF]" target="_blank" rel="noopener noreferrer">
                 Privacy Policy
@@ -244,7 +244,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={status === "loading"}
-          className="w-full mt-4 flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#09223D] to-[#0D2B4D] hover:from-[#051426] hover:to-[#09223D] border border-cyan-500/20 shadow-md transition-all disabled:opacity-50 cursor-pointer"
+          className="w-full mt-4 flex items-center justify-center gap-2 py-3.5 px-6 min-h-[48px] rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#09223D] to-[#0D2B4D] hover:from-[#051426] hover:to-[#09223D] border border-cyan-500/20 shadow-md transition-all disabled:opacity-50 cursor-pointer"
         >
           {status === "loading" ? (
             <>

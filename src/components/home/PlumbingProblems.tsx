@@ -332,94 +332,151 @@ export function PlumbingProblems({
 
         </div>
 
-        {/* ================= MOBILE ACCORDION ================= */}
-        <div className="lg:hidden space-y-3">
-          {COMMON_PROBLEMS_DATA.map((problem) => {
-            const Icon = iconMap[problem.iconName] || Wrench;
-            const isExpanded = mobileExpandedId === problem.id;
+        {/* ================= MOBILE UNIFIED 3D DIAGNOSTIC HUB (ONE Active Detail Panel) ================= */}
+        <div className="lg:hidden space-y-4">
+          {/* Horizontal Symptom Selector Pills */}
+          <div className="w-full min-w-0">
+            <div className="flex items-center justify-between px-1 mb-2.5">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#94A3B8] flex items-center gap-1.5">
+                <Scan className="w-3.5 h-3.5 text-[#38BDF8]" />
+                <span>Select Observed Symptom</span>
+              </span>
+              <span className="text-[10px] text-cyan-300 font-mono">
+                Swipe ← →
+              </span>
+            </div>
 
-            return (
-              <div
-                key={problem.id}
-                className={cn(
-                  "rounded-2xl border transition-all duration-200 overflow-hidden",
-                  isExpanded
-                    ? "bg-[#09223D] border-[#38BDF8] shadow-lg shadow-[#168DFF]/20"
-                    : "bg-white/[0.04] border-white/10"
-                )}
-              >
-                <button
-                  type="button"
-                  onClick={() => toggleMobileItem(problem.id)}
-                  aria-expanded={isExpanded}
-                  className="w-full flex items-center justify-between p-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38BDF8]"
-                >
-                  <div className="flex items-center gap-3">
-                    <div
-                      className={cn(
-                        "w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors",
-                        isExpanded
-                          ? "bg-gradient-to-tr from-[#168DFF] to-[#38BDF8] text-white"
-                          : "bg-white/10 text-[#38BDF8]"
-                      )}
-                    >
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <span className="text-base font-bold font-heading text-white block">
-                        {problem.title}
-                      </span>
-                      <span className="text-xs text-[#94A3B8]">
-                        {problem.urgency} Urgency
-                      </span>
-                    </div>
-                  </div>
+            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 pt-1 touch-scroll -mx-4 px-4">
+              {COMMON_PROBLEMS_DATA.map((problem) => {
+                const Icon = iconMap[problem.iconName] || Wrench;
+                const isSelected = problem.id === selectedId;
 
-                  <ChevronDown
+                return (
+                  <button
+                    key={problem.id}
+                    type="button"
+                    onClick={() => setSelectedId(problem.id)}
+                    aria-pressed={isSelected}
                     className={cn(
-                      "w-5 h-5 text-white/50 transition-transform duration-200",
-                      isExpanded && "rotate-180 text-[#38BDF8]"
+                      "flex-shrink-0 flex items-center gap-2 px-3.5 py-2.5 rounded-xl border text-xs font-bold transition-all cursor-pointer",
+                      isSelected
+                        ? "bg-gradient-to-r from-[#168DFF] to-[#087BDB] text-white border-cyan-400 shadow-md shadow-[#168DFF]/30 scale-[1.02]"
+                        : "bg-white/[0.05] hover:bg-white/[0.1] text-white/80 border-white/10"
                     )}
-                  />
-                </button>
+                  >
+                    <Icon className="w-4 h-4 flex-shrink-0" />
+                    <span className="whitespace-nowrap">{problem.title}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
 
-                {isExpanded && (
-                  <div className="p-4 pt-0 border-t border-white/10 mt-2 space-y-4">
-                    <div className="relative h-48 w-full rounded-xl overflow-hidden mt-3">
-                      <Image
-                        src={problem.image}
-                        alt={problem.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
+          {/* ONE Dedicated Mobile Diagnostic Detail Card */}
+          <div className="bg-[#051426]/95 rounded-2xl border border-cyan-400/30 shadow-xl overflow-hidden">
+            {/* Header image with reticle */}
+            <div className="relative h-48 sm:h-56 w-full overflow-hidden bg-slate-950">
+              <Image
+                src={activeProblem.image}
+                alt={activeProblem.title}
+                fill
+                sizes="(max-width: 1024px) 100vw, 55vw"
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#051426] via-[#051426]/50 to-transparent" />
+              <div className="absolute inset-x-0 h-12 bg-gradient-to-b from-cyan-400/15 to-transparent pointer-events-none animate-scanline" />
 
-                    <p className="text-sm text-[#CBD5E1] leading-relaxed">
-                      {problem.shortExplanation}
-                    </p>
-
-                    {problem.safetyAdvice && (
-                      <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-400/30 text-xs text-amber-200">
-                        <strong className="text-amber-300">Safety Notice:</strong> {problem.safetyAdvice}
-                      </div>
-                    )}
-
-                    <div className="p-3.5 rounded-xl bg-[#0D2B4D] border border-cyan-400/30 text-xs text-white leading-relaxed">
-                      <strong className="text-[#38BDF8]">Recommended Action:</strong> {problem.recommendedNextStep}
-                    </div>
-
-                    <PhoneCTA
-                      placement={`mobile_problem_${problem.id}`}
-                      label={`Call About ${problem.title}`}
-                      variant="hero"
-                      className="w-full py-3.5 text-xs font-bold btn-3d"
-                      showIcon={true}
-                    />
-                  </div>
-                )}
+              <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-[#030C17]/90 text-cyan-300 border border-cyan-400/40 backdrop-blur-md flex items-center gap-1 shadow-sm">
+                  <Activity className="w-3 h-3 text-cyan-400 animate-pulse" />
+                  <span>DIAGNOSTIC STATUS: ACTIVE</span>
+                </span>
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#168DFF] text-white shadow-md border border-white/20">
+                  {activeProblem.urgency} Urgency
+                </span>
               </div>
-            );
-          })}
+
+              <div className="absolute bottom-3 left-3 right-3 flex items-center gap-2.5">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#168DFF] to-[#38BDF8] text-white flex items-center justify-center shadow-lg shadow-[#168DFF]/40 border border-white/20 flex-shrink-0">
+                  <ActiveIcon className="w-5 h-5" />
+                </div>
+                <div className="min-w-0">
+                  <span className="text-[9px] font-bold uppercase tracking-wider text-[#38BDF8] block">
+                    Diagnostic Analysis
+                  </span>
+                  <h3 className="text-lg font-bold font-heading text-white truncate">
+                    {activeProblem.title}
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            {/* Content Details */}
+            <div className="p-4 sm:p-5 space-y-3.5">
+              <p className="text-xs sm:text-sm text-[#CBD5E1] leading-relaxed">
+                {activeProblem.shortExplanation}
+              </p>
+
+              {activeProblem.safetyAdvice && (
+                <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-400/30 text-xs text-amber-200 flex items-start gap-2">
+                  <AlertOctagon className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
+                  <div className="leading-relaxed">
+                    <strong className="text-amber-300">Safety Notice: </strong>
+                    {activeProblem.safetyAdvice}
+                  </div>
+                </div>
+              )}
+
+              {/* Warning Signs & Root Causes */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                <div className="p-3 rounded-xl bg-white/[0.03] border border-white/10">
+                  <p className="text-[11px] font-bold uppercase text-[#38BDF8] mb-1.5 flex items-center gap-1">
+                    <ShieldAlert className="w-3 h-3" />
+                    <span>Warning Signs</span>
+                  </p>
+                  <ul className="space-y-1 text-xs text-[#CBD5E1]">
+                    {activeProblem.warningSigns.slice(0, 3).map((sign, i) => (
+                      <li key={i} className="flex items-start gap-1.5">
+                        <span className="text-[#38BDF8] font-bold">•</span>
+                        <span className="leading-tight">{sign}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="p-3 rounded-xl bg-white/[0.03] border border-white/10">
+                  <p className="text-[11px] font-bold uppercase text-emerald-400 mb-1.5 flex items-center gap-1">
+                    <CheckCircle2 className="w-3 h-3" />
+                    <span>Likely Causes</span>
+                  </p>
+                  <ul className="space-y-1 text-xs text-[#CBD5E1]">
+                    {activeProblem.possibleCauses.slice(0, 3).map((cause, i) => (
+                      <li key={i} className="flex items-start gap-1.5">
+                        <span className="text-emerald-400 font-bold">•</span>
+                        <span className="leading-tight">{cause}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Recommended Action */}
+              <div className="p-3 rounded-xl bg-[#0D2B4D] border border-cyan-400/30 text-xs text-white leading-relaxed">
+                <strong className="text-[#38BDF8] block mb-0.5">Recommended Next Step:</strong>
+                {activeProblem.recommendedNextStep}
+              </div>
+
+              {/* Call CTA Button */}
+              <PhoneCTA
+                placement={`mobile_problem_${activeProblem.id}`}
+                label={`Call About ${activeProblem.title}`}
+                variant="hero"
+                className="w-full min-h-[46px] py-3 text-xs font-bold btn-3d shadow-xl shadow-[#168DFF]/30 mt-2"
+                showIcon={true}
+              />
+            </div>
+          </div>
         </div>
 
       </div>

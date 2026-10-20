@@ -66,7 +66,8 @@ export function PhoneCTA({
       onClick={handleClick}
       aria-label={`Call Spectrum Plumbing Irvine at ${BUSINESS_PHONE.display}`}
       className={cn(
-        "inline-flex items-center justify-center gap-2.5 font-medium transition-all duration-200 select-none group text-center cursor-pointer",
+        "inline-flex items-center justify-center gap-3 font-medium transition-all duration-200 select-none group cursor-pointer",
+        subtext ? "text-left" : "text-center",
         variant !== "subtle" &&
           "px-5 py-3 rounded-lg focus-visible:ring-2 focus-visible:ring-[#087BDB] focus-visible:ring-offset-2",
         getVariantStyles(),
@@ -75,13 +76,16 @@ export function PhoneCTA({
     >
       {showIcon && (
         <span className="flex-shrink-0 transition-transform duration-200 group-hover:scale-110 group-hover:rotate-6">
-          <Phone className="w-5 h-5 fill-current" aria-hidden="true" />
+          <Phone className={cn("fill-current", variant === "hero" ? "w-5 h-5 sm:w-6 sm:h-6" : "w-5 h-5")} aria-hidden="true" />
         </span>
       )}
-      <span className="flex flex-col items-start leading-tight">
-        <span className="font-bold tracking-tight">{label}</span>
+      <span className={cn(
+        "flex flex-col leading-tight",
+        subtext ? "items-start text-left" : "items-center text-center"
+      )}>
+        <span className="font-bold tracking-tight text-left">{label}</span>
         {subtext && (
-          <span className="text-xs opacity-90 font-normal">{subtext}</span>
+          <span className="text-xs opacity-90 font-normal mt-0.5 text-left leading-snug sm:whitespace-nowrap [text-wrap:pretty]">{subtext}</span>
         )}
       </span>
     </a>

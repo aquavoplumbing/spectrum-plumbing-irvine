@@ -12,6 +12,14 @@ export function generateHomepageStructuredData() {
     description:
       "Local plumbing referral and information platform connecting Irvine homeowners with independent plumbing specialists.",
     telephone: BUSINESS_PHONE.raw,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: BUSINESS_INFO.address.street,
+      addressLocality: BUSINESS_INFO.address.city,
+      addressRegion: BUSINESS_INFO.address.state,
+      postalCode: BUSINESS_INFO.address.zip,
+      addressCountry: "US",
+    },
     areaServed: {
       "@type": "AdministrativeArea",
       name: "Irvine, California",

@@ -68,7 +68,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
             <button
               type="button"
               onClick={onClose}
-              className="p-2 rounded-lg text-white/80 hover:text-white hover:bg-white/10 cursor-pointer"
+              className="w-11 h-11 rounded-xl text-white/80 hover:text-white hover:bg-white/10 flex items-center justify-center cursor-pointer transition-colors"
               aria-label="Close navigation menu"
             >
               <X className="w-6 h-6" />
@@ -76,15 +76,16 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
           </div>
 
           {/* Quick Call Box in Mobile Drawer */}
-          <div className="my-5 p-4 rounded-xl bg-[#071D35] border border-[#35C7F4]/30">
-            <p className="text-xs text-[#35C7F4] font-semibold uppercase tracking-wider mb-1">
+          <div className="my-5 p-4 rounded-2xl bg-[#071D35] border border-[#35C7F4]/30 shadow-lg">
+            <p className="text-xs text-[#35C7F4] font-bold uppercase tracking-wider mb-1 flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               Direct Phone Assistance
             </p>
             <PhoneCTA
               placement="mobile_drawer"
               label={`Call ${BUSINESS_PHONE.display}`}
               variant="primary"
-              className="w-full py-3 text-sm font-bold mt-2"
+              className="w-full min-h-[46px] py-3 text-sm font-bold mt-2 shadow-lg shadow-[#168DFF]/30 btn-3d"
               showIcon={true}
             />
           </div>
@@ -96,13 +97,13 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
                 <Wrench className="w-3.5 h-3.5 text-[#35C7F4]" />
                 Primary Services
               </p>
-              <div className="grid grid-cols-1 gap-1 pl-2">
+              <div className="grid grid-cols-1 gap-1 pl-1">
                 {servicesNav?.children?.slice(0, 5).map((child) => (
                   <Link
                     key={child.title}
                     href={child.href}
                     onClick={onClose}
-                    className="py-2 px-3 text-sm text-white/90 hover:text-[#35C7F4] hover:bg-white/5 rounded-lg flex items-center justify-between transition-colors"
+                    className="min-h-[44px] py-2 px-3 text-sm text-white/90 hover:text-[#35C7F4] hover:bg-white/5 rounded-xl flex items-center justify-between transition-colors"
                   >
                     <span>{child.title}</span>
                     <ChevronRight className="w-4 h-4 text-white/40" />
@@ -111,7 +112,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
                 <Link
                   href="/services/"
                   onClick={onClose}
-                  className="py-1.5 px-3 text-xs font-bold text-[#35C7F4] hover:underline"
+                  className="min-h-[44px] flex items-center py-2 px-3 text-xs font-bold text-[#35C7F4] hover:underline"
                 >
                   View All 15 Services →
                 </Link>
@@ -123,13 +124,13 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
                 <MapPin className="w-3.5 h-3.5 text-[#35C7F4]" />
                 Irvine Neighborhoods
               </p>
-              <div className="grid grid-cols-2 gap-1 pl-2">
+              <div className="grid grid-cols-2 gap-1.5 pl-1">
                 {areasNav?.children?.slice(0, 8).map((child) => (
                   <Link
                     key={child.title}
                     href={child.href}
                     onClick={onClose}
-                    className="py-1.5 px-2 text-xs text-white/80 hover:text-[#35C7F4] hover:bg-white/5 rounded transition-colors"
+                    className="min-h-[40px] flex items-center py-1.5 px-2.5 text-xs text-white/80 hover:text-[#35C7F4] hover:bg-white/5 rounded-lg transition-colors"
                   >
                     {child.title}
                   </Link>
@@ -141,42 +142,42 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
               <Link
                 href="/how-it-works/"
                 onClick={onClose}
-                className="block py-2 px-3 text-sm text-white/90 hover:text-[#35C7F4] hover:bg-white/5 rounded-lg"
+                className="min-h-[44px] flex items-center py-2 px-3 text-sm text-white/90 hover:text-[#35C7F4] hover:bg-white/5 rounded-xl transition-colors"
               >
                 How It Works
               </Link>
               <Link
                 href="/about/"
                 onClick={onClose}
-                className="block py-2 px-3 text-sm text-white/90 hover:text-[#35C7F4] hover:bg-white/5 rounded-lg"
+                className="min-h-[44px] flex items-center py-2 px-3 text-sm text-white/90 hover:text-[#35C7F4] hover:bg-white/5 rounded-xl transition-colors"
               >
                 About Us
               </Link>
               <Link
                 href="/blog/"
                 onClick={onClose}
-                className="block py-2 px-3 text-sm text-white/90 hover:text-[#35C7F4] hover:bg-white/5 rounded-lg font-bold"
+                className="min-h-[44px] flex items-center py-2 px-3 text-sm text-white/90 hover:text-[#35C7F4] hover:bg-white/5 rounded-xl font-bold transition-colors"
               >
                 Plumbing Educational Guides
               </Link>
               <Link
                 href="/faq/"
                 onClick={onClose}
-                className="block py-2 px-3 text-sm text-white/90 hover:text-[#35C7F4] hover:bg-white/5 rounded-lg"
+                className="min-h-[44px] flex items-center py-2 px-3 text-sm text-white/90 hover:text-[#35C7F4] hover:bg-white/5 rounded-xl transition-colors"
               >
                 Frequently Asked Questions
               </Link>
               <Link
                 href="/contact/"
                 onClick={onClose}
-                className="block py-2 px-3 text-sm text-[#35C7F4] hover:bg-white/5 rounded-lg font-bold"
+                className="min-h-[44px] flex items-center py-2 px-3 text-sm text-[#35C7F4] hover:bg-white/5 rounded-xl font-bold transition-colors"
               >
                 Contact Us
               </Link>
               <Link
                 href="/search/"
                 onClick={onClose}
-                className="block py-2 px-3 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg"
+                className="min-h-[44px] flex items-center py-2 px-3 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-xl transition-colors"
               >
                 Site Search
               </Link>
@@ -185,7 +186,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
         </div>
 
         {/* Footer info in drawer */}
-        <div className="pt-6 border-t border-white/10 text-xs text-[#A6C5E2]">
+        <div className="pt-6 border-t border-white/10 text-xs text-[#A6C5E2] pb-safe">
           <p className="font-semibold text-white">Serving Irvine, California</p>
           <p className="mt-1 text-[11px] leading-tight">
             Direct Phone: <a href={BUSINESS_PHONE.href} className="text-[#35C7F4] font-bold">{BUSINESS_PHONE.display}</a>
