@@ -290,7 +290,7 @@ export default function BlogIndexPage() {
 
             <div className="flex flex-wrap items-center gap-3 text-xs">
               <Link
-                href="/editorial-standards/"
+                href="/editorial-policy/"
                 className="font-bold text-[#087BDB] hover:text-[#168DFF] underline underline-offset-4"
               >
                 Editorial Standards

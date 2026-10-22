@@ -20,7 +20,7 @@ export const tanklessWaterHeaterDescalingPost: BlogPost = {
     name: "Spectrum Editorial Trade Team",
     role: "Senior Plumbing Content & Technical Research Group",
     bio: "Our technical editorial team consults licensed California plumbing contractors, municipal utility reports, and standard code manuals to publish accurate, transparent diagnostic guides for Orange County property owners.",
-    profileUrl: "/editorial-standards/",
+    profileUrl: "/authors/spectrum-editorial-team/",
     avatar: "/images/hero-pipes-3d.jpg",
   },
   reviewer: {

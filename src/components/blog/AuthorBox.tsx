@@ -48,7 +48,7 @@ export function AuthorBox({ author, className }: AuthorBoxProps) {
             </div>
 
             <Link
-              href={author.profileUrl || "/editorial-standards/"}
+              href="/editorial-policy/"
               className="font-bold text-[#087BDB] hover:text-[#168DFF] transition-colors inline-flex items-center gap-1"
             >
               <span>Read Editorial Standards &amp; Review Policy</span>

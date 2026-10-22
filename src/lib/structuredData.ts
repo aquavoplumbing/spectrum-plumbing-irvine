@@ -397,7 +397,7 @@ export function generateBlogPostStructuredData(post: BlogPost) {
     author: {
       "@type": "Organization",
       name: post.author.name,
-      url: `${BUSINESS_INFO.domain}${post.author.profileUrl || "/editorial-standards/"}`,
+      url: `${BUSINESS_INFO.domain}${post.author.profileUrl || "/authors/spectrum-editorial-team/"}`,
     },
     publisher: {
       "@type": "Organization",
