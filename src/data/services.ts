@@ -113,6 +113,57 @@ export const SERVICES_DATA: ServiceItem[] = [
     image: "/images/sewer-camera-inspection.jpg",
     iconName: "GitBranch",
   },
+  {
+    id: "water-softener-installation-irvine-ca",
+    title: "Water Softener Installation",
+    badge: "Hard Water Defense",
+    shortDescription:
+      "Irvine's 15–22 GPG hard water damages tankless water heaters and pipes. Explore high-efficiency ion-exchange and salt-free softening systems.",
+    typicalProblems: [
+      "Crusty white limescale choking fixtures & showerheads",
+      "Tankless water heater mineral scaling & error codes",
+      "Premature heating element failure in dishwashers",
+      "Accelerated pinhole wear on copper water lines",
+    ],
+    features: ["Ion-exchange softeners", "Salt-free conditioners", "Garage loop installation"],
+    anchor: "#services-softener",
+    image: "/images/water-softener-system.jpg",
+    iconName: "Droplets",
+  },
+  {
+    id: "backflow-testing-irvine-ca",
+    title: "Backflow Testing & Prevention",
+    badge: "IRWD Certified",
+    shortDescription:
+      "Annual testing, certified compliance reporting, rebuilds, and repairs for commercial properties, multi-family HOAs, and irrigation assemblies in Irvine.",
+    typicalProblems: [
+      "Upcoming 30-day IRWD annual compliance deadline",
+      "Water leaking continuously from RPZ relief valve",
+      "Failed annual differential pressure inspection",
+      "Corroded or damaged exterior shutoff valves",
+    ],
+    features: ["Certified AWWA/ABPA testing", "Direct IRWD report filing", "On-site valve rebuilds"],
+    anchor: "#services-backflow",
+    image: "/images/backflow-preventer-valve.jpg",
+    iconName: "Wrench",
+  },
+  {
+    id: "sump-pump-repair-irvine-ca",
+    title: "Sump Pump Repair & Installation",
+    badge: "Drainage Protection",
+    shortDescription:
+      "Subterranean basement, hillside, and sunken courtyard flood defense. Cast-iron submersible pumps, silent check valves, and storm battery backups.",
+    typicalProblems: [
+      "Loud humming without pumping water out of pit",
+      "Pump running continuously without float shutoff",
+      "Rising groundwater overtopping subterranean basin",
+      "Loss of primary power during winter storm downpours",
+    ],
+    features: ["Cast-iron submersible pumps", "Smart battery backup inverters", "Dual vertical float switches"],
+    anchor: "#services-sump",
+    image: "/images/sump-pump-installation.jpg",
+    iconName: "Activity",
+  },
 ];
 
 export * from "./services/index";

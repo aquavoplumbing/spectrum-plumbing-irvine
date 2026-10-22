@@ -14,6 +14,9 @@ import { pipeRepairAndRepipingData } from "./pipe-repair-and-repiping";
 import { waterLineRepairData } from "./water-line-repair";
 import { gasLineServicesData } from "./gas-line-services";
 import { commercialPlumbingData } from "./commercial-plumbing";
+import { waterSoftenerInstallationData } from "./water-softener-installation";
+import { backflowTestingData } from "./backflow-testing";
+import { sumpPumpRepairData } from "./sump-pump-repair";
 
 export const ALL_SERVICES_DATA: ServicePageData[] = [
   emergencyPlumbingData,
@@ -31,6 +34,9 @@ export const ALL_SERVICES_DATA: ServicePageData[] = [
   waterLineRepairData,
   gasLineServicesData,
   commercialPlumbingData,
+  waterSoftenerInstallationData,
+  backflowTestingData,
+  sumpPumpRepairData,
 ];
 
 export const SERVICES_BY_SLUG: Record<string, ServicePageData> = ALL_SERVICES_DATA.reduce(
@@ -75,4 +81,7 @@ export {
   waterLineRepairData,
   gasLineServicesData,
   commercialPlumbingData,
+  waterSoftenerInstallationData,
+  backflowTestingData,
+  sumpPumpRepairData,
 };

@@ -17,12 +17,17 @@ export const MAIN_NAVIGATION: NavItem[] = [
       {
         title: "All Plumbing Services",
         href: "/services/",
-        description: "Explore all 15 specialized residential and commercial plumbing capabilities.",
+        description: "Explore all 18 specialized residential and commercial plumbing capabilities.",
       },
       {
         title: "Emergency Plumbing",
         href: "/services/emergency-plumbing-irvine-ca/",
         description: "Prompt phone connection for urgent residential plumbing issues in Irvine.",
+      },
+      {
+        title: "Water Softener Installation",
+        href: "/services/water-softener-installation-irvine-ca/",
+        description: "Whole-home hard water softening and filtration systems for IRWD water.",
       },
       {
         title: "Drain Cleaning",
@@ -58,6 +63,16 @@ export const MAIN_NAVIGATION: NavItem[] = [
         title: "Hydro Jetting",
         href: "/services/hydro-jetting-irvine-ca/",
         description: "High-pressure water jetting to clear heavy grease and buildup.",
+      },
+      {
+        title: "Backflow Testing & Prevention",
+        href: "/services/backflow-testing-irvine-ca/",
+        description: "Certified cross-connection testing and annual IRWD compliance reporting.",
+      },
+      {
+        title: "Sump Pump Repair & Installation",
+        href: "/services/sump-pump-repair-irvine-ca/",
+        description: "Subterranean drainage, basement flood defense, and battery backups.",
       },
       {
         title: "Commercial Plumbing",
