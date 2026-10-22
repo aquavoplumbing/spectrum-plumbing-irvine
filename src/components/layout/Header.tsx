@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Phone, ChevronDown, Menu, Search } from "lucide-react";
+import { Phone, ChevronDown, Menu, Search, ArrowRight } from "lucide-react";
 import { BUSINESS_PHONE } from "@/config/business";
 import { MAIN_NAVIGATION } from "@/config/navigation";
 import { Logo } from "@/components/shared/Logo";
@@ -72,34 +72,62 @@ export function Header() {
                 </button>
 
                 {servicesDropdownOpen && servicesNav?.children && (
-                  <div className="absolute top-full left-0 w-80 pt-2 z-50">
-                    <div className="bg-[#061830]/98 border border-cyan-400/30 rounded-2xl shadow-[0_20px_50px_rgba(2,10,22,0.85)] p-2.5 backdrop-blur-2xl">
-                      {servicesNav.children.map((child) => (
-                        <Link
-                          key={child.title}
-                          href={child.href}
-                          className="block px-3 py-2 rounded-xl hover:bg-white/10 transition-colors group"
-                          onClick={() => setServicesDropdownOpen(false)}
-                        >
-                          <p className="text-xs font-bold text-white group-hover:text-[#38BDF8]">
-                            {child.title}
-                          </p>
-                          {child.description && (
-                            <p className="text-[11px] text-[#94A3B8] line-clamp-1 mt-0.5">
-                              {child.description}
-                            </p>
-                          )}
-                        </Link>
-                      ))}
-                      <div className="pt-2 mt-1 border-t border-white/10 px-3">
+                  <div className="absolute top-full left-0 w-[580px] xl:w-[640px] pt-2 z-50">
+                    <div className="bg-[#061830]/98 border border-cyan-400/30 rounded-2xl shadow-[0_20px_50px_rgba(2,10,22,0.85)] p-3 backdrop-blur-2xl max-h-[calc(100vh-100px)] overflow-y-auto">
+                      {/* Top Header Label */}
+                      <div className="flex items-center justify-between pb-2 mb-2 border-b border-white/10 px-1">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-cyan-300">
+                          Residential &amp; Commercial Plumbing Capabilities
+                        </span>
+                        <span className="text-[10px] font-semibold bg-cyan-500/15 text-cyan-300 px-2 py-0.5 rounded-full border border-cyan-500/30">
+                          18 Services
+                        </span>
+                      </div>
+
+                      {/* 2-Column Balanced Grid */}
+                      <div className="grid grid-cols-2 gap-1.5">
+                        {servicesNav.children
+                          .filter((child) => child.href !== "/services/")
+                          .map((child) => (
+                            <Link
+                              key={child.title}
+                              href={child.href}
+                              className="flex items-start gap-2.5 p-2 rounded-xl hover:bg-white/[0.08] border border-transparent hover:border-cyan-400/20 transition-all duration-150 group"
+                              onClick={() => setServicesDropdownOpen(false)}
+                            >
+                              <div className="w-1.5 h-1.5 rounded-full bg-cyan-400/70 group-hover:bg-[#38BDF8] mt-1.5 shrink-0 transition-colors" />
+                              <div className="min-w-0 flex-1">
+                                <p className="text-[12px] font-bold text-white group-hover:text-[#38BDF8] transition-colors leading-tight truncate">
+                                  {child.title}
+                                </p>
+                                {child.description && (
+                                  <p className="text-[10px] text-[#94A3B8] group-hover:text-slate-300 line-clamp-1 mt-0.5 leading-tight">
+                                    {child.description}
+                                  </p>
+                                )}
+                              </div>
+                            </Link>
+                          ))}
+                      </div>
+
+                      {/* Bottom Footer Bar */}
+                      <div className="pt-2.5 mt-2 border-t border-white/10 px-2 flex items-center justify-between">
                         <Link
                           href="/services/"
-                          className="text-xs font-bold text-[#38BDF8] hover:text-white flex items-center justify-between py-1.5 transition-colors"
+                          className="text-xs font-bold text-[#38BDF8] hover:text-white flex items-center gap-1.5 py-1 transition-colors group"
                           onClick={() => setServicesDropdownOpen(false)}
                         >
-                          <span>Explore All 15 Services</span>
-                          <span>→</span>
+                          <span>Explore All 18 Capabilities</span>
+                          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                         </Link>
+                        <a
+                          href={BUSINESS_PHONE.href}
+                          onClick={() => trackPhoneClick("header_services_dropdown")}
+                          className="text-[11px] font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5 py-1 transition-colors"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                          <span>Direct Phone: {BUSINESS_PHONE.display}</span>
+                        </a>
                       </div>
                     </div>
                   </div>
