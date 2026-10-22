@@ -15,6 +15,30 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${BUSINESS_INFO.domain}/privacy-policy/`,
   },
+  openGraph: {
+    title: "Privacy Policy | Spectrum Plumbing Irvine",
+    description:
+      "Review Spectrum Plumbing Irvine's privacy practices, call tracking disclosure, and California privacy rights.",
+    url: `${BUSINESS_INFO.domain}/privacy-policy/`,
+    siteName: BUSINESS_INFO.name,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Spectrum Plumbing Irvine - Privacy Policy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | Spectrum Plumbing Irvine",
+    description:
+      "Review Spectrum Plumbing Irvine's privacy practices, call tracking disclosure, and California privacy rights.",
+    images: ["/og-image.jpg"],
+  },
   robots: {
     index: true,
     follow: true,

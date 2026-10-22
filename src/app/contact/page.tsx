@@ -36,7 +36,23 @@ export const metadata: Metadata = {
       "Get in touch with Spectrum Plumbing Irvine. Direct phone line at (949) 539-8503 for plumbing assistance across Irvine, CA.",
     url: `${BUSINESS_INFO.domain}/contact/`,
     siteName: BUSINESS_INFO.name,
+    locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Spectrum Plumbing Irvine - Contact Us",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Spectrum Plumbing Irvine | Call (949) 539-8503",
+    description:
+      "Get in touch with Spectrum Plumbing Irvine. Direct phone line at (949) 539-8503 for plumbing assistance across Irvine, CA.",
+    images: ["/og-image.jpg"],
   },
 };
 

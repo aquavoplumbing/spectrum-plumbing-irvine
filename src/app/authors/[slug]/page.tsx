@@ -51,7 +51,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: author.bio,
       url: `${BUSINESS_INFO.domain}/authors/${author.slug}/`,
       siteName: BUSINESS_INFO.name,
+      locale: "en_US",
       type: "profile",
+      images: [
+        {
+          url: author.avatar || "/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: `${author.name} - Author Profile`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${author.name} | Spectrum Plumbing Irvine`,
+      description: author.bio,
+      images: [author.avatar || "/og-image.jpg"],
     },
   };
 }

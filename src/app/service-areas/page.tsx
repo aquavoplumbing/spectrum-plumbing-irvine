@@ -41,7 +41,23 @@ export const metadata: Metadata = {
       "Explore plumbing services across Irvine neighborhoods including Woodbridge, Turtle Rock, Northwood, and Westpark. Direct phone assistance at (949) 539-8503.",
     url: `${BUSINESS_INFO.domain}/service-areas/`,
     siteName: BUSINESS_INFO.name,
+    locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Spectrum Plumbing Irvine - Service Areas Coverage",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Plumbing Service Areas in Irvine, CA | Spectrum Plumbing",
+    description:
+      "Explore plumbing services across Irvine neighborhoods including Woodbridge, Turtle Rock, Northwood, and Westpark. Direct phone assistance at (949) 539-8503.",
+    images: ["/og-image.jpg"],
   },
 };
 

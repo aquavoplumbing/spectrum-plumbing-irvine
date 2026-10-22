@@ -44,7 +44,23 @@ export const metadata: Metadata = {
       "A trusted local platform connecting Irvine residents with qualified, independent plumbing contractors across Orange County.",
     url: `${BUSINESS_INFO.domain}/about/`,
     siteName: BUSINESS_INFO.name,
+    locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "About Spectrum Plumbing Irvine",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Spectrum Plumbing Irvine",
+    description:
+      "A trusted local platform connecting Irvine residents with qualified, independent plumbing contractors across Orange County.",
+    images: ["/og-image.jpg"],
   },
 };
 

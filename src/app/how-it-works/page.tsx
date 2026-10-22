@@ -37,7 +37,23 @@ export const metadata: Metadata = {
       "Understand our transparent phone inquiry and referral process connecting Irvine callers with independent plumbing contractors.",
     url: `${BUSINESS_INFO.domain}/how-it-works/`,
     siteName: BUSINESS_INFO.name,
+    locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Spectrum Plumbing Irvine - How It Works",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How It Works | Spectrum Plumbing Irvine",
+    description:
+      "Understand our transparent phone inquiry and referral process connecting Irvine callers with independent plumbing contractors.",
+    images: ["/og-image.jpg"],
   },
 };
 

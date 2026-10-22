@@ -15,6 +15,30 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${BUSINESS_INFO.domain}/disclaimer/`,
   },
+  openGraph: {
+    title: "Website Disclaimer & Plumbing Advisory | Spectrum Plumbing Irvine",
+    description:
+      "Important advisory regarding general educational plumbing content, emergency safety procedures, and independent contractor relationships in Irvine, CA.",
+    url: `${BUSINESS_INFO.domain}/disclaimer/`,
+    siteName: BUSINESS_INFO.name,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Spectrum Plumbing Irvine - Website Disclaimer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Website Disclaimer & Plumbing Advisory | Spectrum Plumbing Irvine",
+    description:
+      "Important advisory regarding general educational plumbing content, emergency safety procedures, and independent contractor relationships in Irvine, CA.",
+    images: ["/og-image.jpg"],
+  },
   robots: {
     index: true,
     follow: true,

@@ -33,7 +33,23 @@ export const metadata: Metadata = {
       "Our transparent commitment to publishing accurate, technically verified plumbing educational resources for Irvine property owners.",
     url: `${BUSINESS_INFO.domain}/editorial-policy/`,
     siteName: BUSINESS_INFO.name,
+    locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Spectrum Plumbing Irvine - Editorial Policy & Standards",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Editorial Standards & Content Integrity Policy | Spectrum Plumbing Irvine",
+    description:
+      "Our transparent commitment to publishing accurate, technically verified plumbing educational resources for Irvine property owners.",
+    images: ["/og-image.jpg"],
   },
 };
 

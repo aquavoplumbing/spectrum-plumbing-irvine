@@ -41,7 +41,23 @@ export const metadata: Metadata = {
       "Complete directory of professional plumbing services across Irvine, CA. Immediate phone triage at (949) 539-8503.",
     url: `${BUSINESS_INFO.domain}/services/`,
     siteName: BUSINESS_INFO.name,
+    locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Plumbing Services in Irvine, CA - Spectrum Plumbing Irvine",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Plumbing Services in Irvine, CA | Spectrum Plumbing Irvine",
+    description:
+      "Complete directory of professional plumbing services across Irvine, CA. Immediate phone triage at (949) 539-8503.",
+    images: ["/og-image.jpg"],
   },
 };
 

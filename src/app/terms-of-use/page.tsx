@@ -15,6 +15,30 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${BUSINESS_INFO.domain}/terms-of-use/`,
   },
+  openGraph: {
+    title: "Terms of Use | Spectrum Plumbing Irvine",
+    description:
+      "Review the terms and conditions governing the use of Spectrum Plumbing Irvine's website, referral directory, and informational content.",
+    url: `${BUSINESS_INFO.domain}/terms-of-use/`,
+    siteName: BUSINESS_INFO.name,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Spectrum Plumbing Irvine - Terms of Use",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Use | Spectrum Plumbing Irvine",
+    description:
+      "Review the terms and conditions governing the use of Spectrum Plumbing Irvine's website, referral directory, and informational content.",
+    images: ["/og-image.jpg"],
+  },
   robots: {
     index: true,
     follow: true,

@@ -15,6 +15,30 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${BUSINESS_INFO.domain}/accessibility/`,
   },
+  openGraph: {
+    title: "Accessibility Statement | Spectrum Plumbing Irvine",
+    description:
+      "Spectrum Plumbing Irvine is committed to digital accessibility. Learn about our WCAG 2.1 AA conformance targets and assistive features.",
+    url: `${BUSINESS_INFO.domain}/accessibility/`,
+    siteName: BUSINESS_INFO.name,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Spectrum Plumbing Irvine - Accessibility Statement",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Accessibility Statement | Spectrum Plumbing Irvine",
+    description:
+      "Spectrum Plumbing Irvine is committed to digital accessibility. Learn about our WCAG 2.1 AA conformance targets and assistive features.",
+    images: ["/og-image.jpg"],
+  },
   robots: {
     index: true,
     follow: true,

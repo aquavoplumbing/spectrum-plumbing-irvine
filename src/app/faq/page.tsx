@@ -35,7 +35,23 @@ export const metadata: Metadata = {
       "Comprehensive answers to homeowner plumbing, diagnostic, and pricing questions in Irvine, California.",
     url: `${BUSINESS_INFO.domain}/faq/`,
     siteName: BUSINESS_INFO.name,
+    locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Spectrum Plumbing Irvine - Plumbing FAQ",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Plumbing Frequently Asked Questions | Spectrum Plumbing Irvine",
+    description:
+      "Comprehensive answers to homeowner plumbing, diagnostic, and pricing questions in Irvine, California.",
+    images: ["/og-image.jpg"],
   },
 };
 
